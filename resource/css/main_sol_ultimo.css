@@ -1,0 +1,269 @@
+﻿/*html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}*/
+
+html, body {
+    height: 100%;
+    /*font-family: 'open_sansregular';*/
+    font-family: sans-serif;
+    font-size: 13px;
+    background-color: #FDFDFD;
+}
+
+.contenido {
+    min-height: 100%;
+    /* equal to footer height */
+    margin-bottom: -60px;
+}
+
+    .contenido:after {
+        content: "";
+        display: block;
+    }
+
+footer, .contenido:after {
+        height: 60px;
+    }
+
+footer {
+    /*background: #454644; AFAC 22/12/2015S*/
+    background: #575A57;
+    color: #8D918A;
+    font-size: 12px;
+    text-align: center;
+    height: 100%;
+    min-height: 80px;
+    padding: 15px 0px;
+}
+
+header {
+    width: 100%;
+    height: 65px;
+    position: relative;
+    background-color: #FFFFFF;
+    /*border-bottom: #bcbebf solid 1px;*/
+    /*-webkit-box-shadow: 0px 8px 5px -4px rgba(0,0,0,0.11);
+    -moz-box-shadow: 0px 8px 5px -4px rgba(0,0,0,0.11);
+    box-shadow: 0px 8px 5px -4px rgba(0,0,0,0.11);*/
+}
+
+    header .header-lineas {
+        width: 100%;
+    }
+
+        header .header-lineas .red {
+            float: left;
+            width: 55%;
+            height: 6px;
+            background-color: #0D1D4A; /*#C2151D*/
+        }
+
+        header .header-lineas .gray {
+            float: left;
+            width: 10%;
+            height: 6px;
+            background-color: #6d6d6a;
+        }
+
+        header .header-lineas .gray-white {
+            float: left;
+            width: 35%;
+            height: 6px;
+            background-color: #959594;
+        }
+
+@font-face {
+    font-family: 'open_sanssemibold';
+    src: url('fonts/opensans-semibold-webfont.eot');
+    src: url('fonts/opensans-semibold-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/opensans-semibold-webfont.woff2') format('woff2'), url('fonts/opensans-semibold-webfont.woff') format('woff'), url('fonts/opensans-semibold-webfont.ttf') format('truetype'), url('fonts/opensans-semibold-webfont.svg#open_sanssemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('fonts/opensans-regular-webfont.eot');
+    src: url('fonts/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/opensans-regular-webfont.woff2') format('woff2'), url('fonts/opensans-regular-webfont.woff') format('woff'), url('fonts/opensans-regular-webfont.ttf') format('truetype'), url('fonts/opensans-regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'open_sansbold';
+    src: url('fonts/opensans-bold-webfont.eot');
+    src: url('fonts/opensans-bold-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/opensans-bold-webfont.woff2') format('woff2'), url('fonts/opensans-bold-webfont.woff') format('woff'), url('fonts/opensans-bold-webfont.ttf') format('truetype'), url('fonts/opensans-bold-webfont.svg#open_sansbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'pt_sansregular';
+    src: url('fonts/PTS55F-webfont.eot');
+    src: url('fonts/PTS55F-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/PTS55F-webfont.woff') format('woff'), url('fonts/PTS55F-webfont.ttf') format('truetype'), url('fonts/PTS55F-webfont.svg#pt_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*LOGIN*/
+.logincms_center {
+    margin: auto;
+    width: 337px;
+    padding: 20px;
+    padding-top: 80px;
+}
+
+    .logincms_center .ingrese_datos {
+        font-size: 18px;
+        text-align: center;
+        color: #46515F;
+    }
+
+    .logincms_center input {
+        width: 294px;
+        border-radius: 10px;
+        height: 46px;
+        color: #7D8799;
+        text-align: left;
+        border: #AEBFBF solid 1px;
+        padding-left: 45px;
+    }
+
+    .logincms_center .tarjeta_persona {
+        margin: 13px 15px;
+    }
+
+    .logincms_center div {
+        margin: 12px 0px;
+    }
+
+    .logincms_center .btn_buscar {
+        background-color: #0D1D4A; 
+        border: #0D1D4A solid 2px;
+         border-radius: 3px;
+        color: #fff;
+        cursor: pointer;
+        display: block;
+        font-size: 17px;
+        font-weight: bold;
+        height: 46px;
+        padding: 10px 0px;
+        text-align: center;
+        width: 294px;
+    }
+
+.fondo_logincms {
+    background-color: rgba(0, 0, 0, 0.05);
+    height: 500px;
+}
+
+
+/*.logincms_center .btn_buscar:hover {
+    text-decoration: none;
+    color: #fff;
+    background-color: #0D1D4A; 
+}
+
+
+.icon_logincms_us {
+    background-image: url(../img/icons/login_icon_us.png);
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 20px;
+    position: absolute;
+    margin: 13px 15px;
+}
+
+.icon_logincms_pass {
+    background-image: url(../img/icons/login_icon_pass.png);
+    background-repeat: no-repeat;
+    width: 18px;
+    height: 20px;
+    position: absolute;
+    margin: 13px 15px;
+}*/
+
+/*FIN LOGIN*/
+
+/*.font_pequeno01 {
+    font-size: 16px;
+}
+
+.font_pequeno02 {
+    font-size: 22px;
+}
+
+.font_pequeno03 {
+    font-size: 19px;
+}
+
+.elemento {
+    background-image: url(../img/logo.png);
+    background-repeat: no-repeat;
+}
+
+.header-titulo-login {
+    position: absolute;
+    height: 93px;
+    right: 180px;
+    top: 25px;
+    z-index: 2;
+    font-family: Open Sans;
+    font-size: 18px;
+    font-weight: normal;
+    color: #6D6D6A;
+    text-align: right;
+}
+
+header .header-elemento-login {
+    position: absolute;
+    width: 112px;
+    height: 101px;
+    right: 62px;
+    top: 0;
+    z-index: 2;
+}*/
+
+/*DIVS*/
+
+/*.dv_elemento_salir {
+    float: right;
+    padding-right: 28px;
+}
+
+.dv_elemento_menu {
+    float: right;
+    padding-right: 21px;
+}
+.elemento_salir {
+    color: #C0131D;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+    .elemento_salir:hover {
+        color: #C0131D;
+    }
+
+    .elemento_salir img {
+        padding-bottom: 2px;
+        padding-left: 1px;
+    }
+
+.elemento_menu {
+    color: #2E648D;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+    .elemento_menu img {
+        padding-bottom: 2px;
+        padding-left: 2px;
+    }
+
+    .elemento_menu:hover {
+        color: #2E648D;
+    }*/

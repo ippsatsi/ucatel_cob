@@ -1,0 +1,127 @@
+
+Entrada Log : 
+Detalle de Hora: 11:12:23 a.m. martes, 19 de enero de 2016
+
+Message:
+Índice fuera de los límites de la matriz.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+DA
+
+
+
+
+
+StackTrace:
+   en DA.DA_MTD.InsertarNuevoDocExpediente(BE_MTD objMTDBE) en c:\DESARROLLO\SISDIV\DA\DA_MTD.cs:línea 156
+
+
+
+
+
+TargetSite:
+System.String InsertarNuevoDocExpediente(BE.BE_MTD)
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 11:12:55 a.m. martes, 19 de enero de 2016
+
+Message:
+Índice fuera de los límites de la matriz.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+DA
+
+
+
+
+
+StackTrace:
+   en DA.DA_MTD.InsertarNuevoDocExpediente(BE_MTD objMTDBE) en c:\DESARROLLO\SISDIV\DA\DA_MTD.cs:línea 156
+
+
+
+
+
+TargetSite:
+System.String InsertarNuevoDocExpediente(BE.BE_MTD)
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 11:13:48 a.m. martes, 19 de enero de 2016
+
+Message:
+La cadena de entrada no tiene el formato correcto.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+JNE.UTILITARIO
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.EjecutarQR(String strConexion, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_MTD.InsertarNuevoDocExpediente(BE_MTD objMTDBE) en c:\DESARROLLO\SISDIV\DA\DA_MTD.cs:línea 179
+
+
+
+
+
+TargetSite:
+Int32 EjecutarQR(System.String, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------

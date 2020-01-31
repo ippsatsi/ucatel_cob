@@ -1,0 +1,5 @@
+sed -i 's|<%=ResolveClientUrl("~/||g' master.php 
+sed -i 's|)%>"||g' master.php 
+sed -i 's|")%>||g' master.php 
+sed -i 's|~/||g' master.php 
+

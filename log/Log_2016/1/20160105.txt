@@ -1,0 +1,704 @@
+
+Entrada Log : 
+Detalle de Hora: 02:46:40 p.m. martes, 05 de enero de 2016
+
+Message:
+No se ha encontrado la columna especificada en el juego de resultados
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+Oracle.DataAccess
+
+
+
+
+
+StackTrace:
+   en Oracle.DataAccess.Client.OracleDataReader.GetOrdinal(String name)
+   en DA.DA_Util.GetString(IDataReader dr, String nombreColumna) en c:\DESARROLLO\SISDIV\DA\DA_Util.cs:línea 95
+   en DA.DA_Proceso.ObtenerMultasPorDni(BE_Multa objMulta) en c:\DESARROLLO\SISDIV\DA\DA_Proceso.cs:línea 63
+
+
+
+
+
+TargetSite:
+Int32 GetOrdinal(System.String)
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 03:37:08 p.m. martes, 05 de enero de 2016
+
+Message:
+Índice fuera de los límites de la matriz.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+DA
+
+
+
+
+
+StackTrace:
+   en DA.DA_Ubigeo.listarProvincia(BE_Ubigeo objUbigeo) en c:\DESARROLLO\SISDIV\DA\DA_Ubigeo.cs:línea 84
+
+
+
+
+
+TargetSite:
+System.Collections.Generic.List`1[BE.BE_Ubigeo] listarProvincia(BE.BE_Ubigeo)
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 03:49:51 p.m. martes, 05 de enero de 2016
+
+Message:
+Índice fuera de los límites de la matriz.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+DA
+
+
+
+
+
+StackTrace:
+   en DA.DA_Ubigeo.listarProvincia(BE_Ubigeo objUbigeo) en c:\DESARROLLO\SISDIV\DA\DA_Ubigeo.cs:línea 84
+
+
+
+
+
+TargetSite:
+System.Collections.Generic.List`1[BE.BE_Ubigeo] listarProvincia(BE.BE_Ubigeo)
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 03:51:25 p.m. martes, 05 de enero de 2016
+
+Message:
+Índice fuera de los límites de la matriz.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+DA
+
+
+
+
+
+StackTrace:
+   en DA.DA_Ubigeo.listarProvincia(BE_Ubigeo objUbigeo) en c:\DESARROLLO\SISDIV\DA\DA_Ubigeo.cs:línea 84
+
+
+
+
+
+TargetSite:
+System.Collections.Generic.List`1[BE.BE_Ubigeo] listarProvincia(BE.BE_Ubigeo)
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 03:52:58 p.m. martes, 05 de enero de 2016
+
+Message:
+Índice fuera de los límites de la matriz.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+DA
+
+
+
+
+
+StackTrace:
+   en DA.DA_Ubigeo.listarProvincia(BE_Ubigeo objUbigeo) en c:\DESARROLLO\SISDIV\DA\DA_Ubigeo.cs:línea 84
+
+
+
+
+
+TargetSite:
+System.Collections.Generic.List`1[BE.BE_Ubigeo] listarProvincia(BE.BE_Ubigeo)
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 03:54:56 p.m. martes, 05 de enero de 2016
+
+Message:
+Índice fuera de los límites de la matriz.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+DA
+
+
+
+
+
+StackTrace:
+   en DA.DA_Ubigeo.listarProvincia(BE_Ubigeo objUbigeo) en c:\DESARROLLO\SISDIV\DA\DA_Ubigeo.cs:línea 84
+
+
+
+
+
+TargetSite:
+System.Collections.Generic.List`1[BE.BE_Ubigeo] listarProvincia(BE.BE_Ubigeo)
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 05:00:50 p.m. martes, 05 de enero de 2016
+
+Message:
+ORA-00979: not a GROUP BY expression
+ORA-06512: at "DISPENSA.PKG_PROCESO", line 231
+ORA-06512: at line 1
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+Oracle Data Provider for .NET
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Proceso.ObtenerMultasPorDni(BE_Multa objMulta) en c:\DESARROLLO\SISDIV\DA\DA_Proceso.cs:línea 45
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 05:00:57 p.m. martes, 05 de enero de 2016
+
+Message:
+ORA-00979: not a GROUP BY expression
+ORA-06512: at "DISPENSA.PKG_PROCESO", line 231
+ORA-06512: at line 1
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+Oracle Data Provider for .NET
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Proceso.ObtenerMultasPorDni(BE_Multa objMulta) en c:\DESARROLLO\SISDIV\DA\DA_Proceso.cs:línea 45
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 05:01:12 p.m. martes, 05 de enero de 2016
+
+Message:
+ORA-00979: not a GROUP BY expression
+ORA-06512: at "DISPENSA.PKG_PROCESO", line 231
+ORA-06512: at line 1
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+Oracle Data Provider for .NET
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Proceso.ObtenerMultasPorDni(BE_Multa objMulta) en c:\DESARROLLO\SISDIV\DA\DA_Proceso.cs:línea 45
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 05:01:20 p.m. martes, 05 de enero de 2016
+
+Message:
+ORA-00979: not a GROUP BY expression
+ORA-06512: at "DISPENSA.PKG_PROCESO", line 231
+ORA-06512: at line 1
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+Oracle Data Provider for .NET
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Proceso.ObtenerMultasPorDni(BE_Multa objMulta) en c:\DESARROLLO\SISDIV\DA\DA_Proceso.cs:línea 45
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 05:01:51 p.m. martes, 05 de enero de 2016
+
+Message:
+ORA-00979: not a GROUP BY expression
+ORA-06512: at "DISPENSA.PKG_PROCESO", line 231
+ORA-06512: at line 1
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+Oracle Data Provider for .NET
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Proceso.ObtenerMultasPorDni(BE_Multa objMulta) en c:\DESARROLLO\SISDIV\DA\DA_Proceso.cs:línea 45
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 05:02:49 p.m. martes, 05 de enero de 2016
+
+Message:
+ORA-00979: not a GROUP BY expression
+ORA-06512: at "DISPENSA.PKG_PROCESO", line 231
+ORA-06512: at line 1
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+Oracle Data Provider for .NET
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Proceso.ObtenerMultasPorDni(BE_Multa objMulta) en c:\DESARROLLO\SISDIV\DA\DA_Proceso.cs:línea 45
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 05:02:54 p.m. martes, 05 de enero de 2016
+
+Message:
+ORA-00979: not a GROUP BY expression
+ORA-06512: at "DISPENSA.PKG_PROCESO", line 231
+ORA-06512: at line 1
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+Oracle Data Provider for .NET
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Proceso.ObtenerMultasPorDni(BE_Multa objMulta) en c:\DESARROLLO\SISDIV\DA\DA_Proceso.cs:línea 45
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 05:05:04 p.m. martes, 05 de enero de 2016
+
+Message:
+ORA-00979: not a GROUP BY expression
+ORA-06512: at "DISPENSA.PKG_PROCESO", line 231
+ORA-06512: at line 1
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+Oracle Data Provider for .NET
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Proceso.ObtenerMultasPorDni(BE_Multa objMulta) en c:\DESARROLLO\SISDIV\DA\DA_Proceso.cs:línea 45
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 05:05:23 p.m. martes, 05 de enero de 2016
+
+Message:
+ORA-00979: not a GROUP BY expression
+ORA-06512: at "DISPENSA.PKG_PROCESO", line 231
+ORA-06512: at line 1
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+Oracle Data Provider for .NET
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Proceso.ObtenerMultasPorDni(BE_Multa objMulta) en c:\DESARROLLO\SISDIV\DA\DA_Proceso.cs:línea 45
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 05:05:26 p.m. martes, 05 de enero de 2016
+
+Message:
+ORA-00979: not a GROUP BY expression
+ORA-06512: at "DISPENSA.PKG_PROCESO", line 231
+ORA-06512: at line 1
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+Oracle Data Provider for .NET
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Proceso.ObtenerMultasPorDni(BE_Multa objMulta) en c:\DESARROLLO\SISDIV\DA\DA_Proceso.cs:línea 45
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------

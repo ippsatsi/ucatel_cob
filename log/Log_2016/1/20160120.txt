@@ -1,0 +1,357 @@
+
+Entrada Log : 
+Detalle de Hora: 12:12:25 p.m. miércoles, 20 de enero de 2016
+
+Message:
+ORA-12899: value too large for column "DISPENSA"."DISPENSA"."ID_TIPOOMISION" (actual: 4, maximum: 1)
+ORA-06512: at "DISPENSA.PKG_DISPENSAS", line 829
+ORA-06512: at line 1
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+Oracle Data Provider for .NET
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.EjecutarQR(String strConexion, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Dispensa.agregar(BE_Dispensa objDispensa) en c:\DESARROLLO\SISDIV\DA\DA_Dispensa.cs:línea 61
+
+
+
+
+
+TargetSite:
+Int32 EjecutarQR(System.String, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 12:14:18 p.m. miércoles, 20 de enero de 2016
+
+Message:
+ORA-01843: not a valid month
+ORA-06512: at "DISPENSA.PKG_SOLICITUD_DISPENSA", line 2278
+ORA-06512: at line 1
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+Oracle Data Provider for .NET
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.EjecutarQR(String strConexion, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_SolicitudDispensa.agregar(BE_SolicitudDispensa objSolicitudDispensa) en c:\DESARROLLO\SISDIV\DA\DA_SolicitudDispensa.cs:línea 75
+
+
+
+
+
+TargetSite:
+Int32 EjecutarQR(System.String, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 12:19:49 p.m. miércoles, 20 de enero de 2016
+
+Message:
+ORA-01843: not a valid month
+ORA-06512: at "DISPENSA.PKG_SOLICITUD_DISPENSA", line 2278
+ORA-06512: at line 1
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+Oracle Data Provider for .NET
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.EjecutarQR(String strConexion, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_SolicitudDispensa.agregar(BE_SolicitudDispensa objSolicitudDispensa) en c:\DESARROLLO\SISDIV\DA\DA_SolicitudDispensa.cs:línea 75
+
+
+
+
+
+TargetSite:
+Int32 EjecutarQR(System.String, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 02:09:09 p.m. miércoles, 20 de enero de 2016
+
+Message:
+ORA-01843: not a valid month
+ORA-06512: at line 1
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+Oracle Data Provider for .NET
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.EjecutarQR(String strConexion, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_SolicitudDispensa.agregar(BE_SolicitudDispensa objSolicitudDispensa) en c:\DESARROLLO\SISDIV\DA\DA_SolicitudDispensa.cs:línea 75
+
+
+
+
+
+TargetSite:
+Int32 EjecutarQR(System.String, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 02:10:53 p.m. miércoles, 20 de enero de 2016
+
+Message:
+ORA-01843: not a valid month
+ORA-06512: at line 1
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+Oracle Data Provider for .NET
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.EjecutarQR(String strConexion, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_SolicitudDispensa.agregar(BE_SolicitudDispensa objSolicitudDispensa) en c:\DESARROLLO\SISDIV\DA\DA_SolicitudDispensa.cs:línea 75
+
+
+
+
+
+TargetSite:
+Int32 EjecutarQR(System.String, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 02:12:56 p.m. miércoles, 20 de enero de 2016
+
+Message:
+ORA-01843: not a valid month
+ORA-06512: at line 1
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+Oracle Data Provider for .NET
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.EjecutarQR(String strConexion, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_SolicitudDispensa.agregar(BE_SolicitudDispensa objSolicitudDispensa) en c:\DESARROLLO\SISDIV\DA\DA_SolicitudDispensa.cs:línea 75
+
+
+
+
+
+TargetSite:
+Int32 EjecutarQR(System.String, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 06:33:13 p.m. miércoles, 20 de enero de 2016
+
+Message:
+ORA-03135: la conexión ha perdido contacto
+Identificador de Proceso: 0
+Identificador de Sesión: 70 Número de Serie: 35436
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+Oracle Data Provider for .NET
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Proceso.ObtenerCantMultasPorDni(String dni) en c:\DESARROLLO\SISDIV\DA\DA_Proceso.cs:línea 119
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 06:35:39 p.m. miércoles, 20 de enero de 2016
+
+Message:
+ORA-03135: la conexión ha perdido contacto
+Identificador de Proceso: 0
+Identificador de Sesión: 140 Número de Serie: 17263
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+Oracle Data Provider for .NET
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_MTD.consultarCodigoLugar(String IdRegion, String IdProvincia, String IdDistrito) en c:\DESARROLLO\SISDIV\DA\DA_MTD.cs:línea 45
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------

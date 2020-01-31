@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="imprimir.aspx.cs" Inherits="WEB.reporte.imprimir" %>

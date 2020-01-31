@@ -1,0 +1,55 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Popup.master.cs" Inherits="WEB.resource.masterPage.Popup" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="~/resource/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <input type="hidden" value='<%=Request.Url.GetLeftPart(UriPartial.Authority) + VirtualPathUtility.ToAbsolute("~/") %>' id="rutaWeb" />
+    <input type="hidden" value='<%=VirtualPathUtility.ToAbsolute("~/") %>' id="MapPath" />
+    <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Popup</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+            <asp:ContentPlaceHolder ID="titulo" runat="server">
+            </asp:ContentPlaceHolder>
+          </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+        </div>
+        <asp:ContentPlaceHolder ID="contenido" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <footer class="footer">
+      <div class="container text-right">
+        <br />
+        <asp:ContentPlaceHolder ID="footer" runat="server">
+        </asp:ContentPlaceHolder>
+      </div>
+    </footer>
+    <script type="text/javascript" src='<%=ResolveClientUrl("~/resource/assets/global/plugins/jquery.min.js")%>'></script>
+  <!--  <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>    -->
+    <script type="text/javascript" src='<%=ResolveClientUrl("~/resource/assets/global/plugins/jquery-migrate-1.2.1.js")%>'></script>
+    <script type="text/javascript" src='<%=ResolveClientUrl("~/resource/assets/global/plugins/bootstrap/js/bootstrap.min.js")%>'></script>
+    <script type="text/javascript" src='<%=ResolveClientUrl("~/resource/assets/global/plugins/bootbox/bootbox.min.js")%>'></script>
+    <script type="text/javascript">
+        var strServicio = $("#rutaWeb").val() + 'resource/service/';
+        var strPath = $("#rutaWeb").val();
+    </script>
+    <asp:ContentPlaceHolder ID="script" runat="server">
+    </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>

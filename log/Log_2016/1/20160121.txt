@@ -1,0 +1,380 @@
+
+Entrada Log : 
+Detalle de Hora: 03:54:20 p.m. jueves, 21 de enero de 2016
+
+Message:
+ORA-01843: not a valid month
+ORA-06512: at line 1
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+Oracle Data Provider for .NET
+
+
+
+
+
+StackTrace:
+   en Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   en Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   en Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en JNE.UTILITARIO.Oracle_Helper.ExecuteNonQuery(OracleConnection connection, CommandType commandType, String commandText, OracleParameter[] commandParameters)
+   en JNE.UTILITARIO.Oracle_Entity.EjecutarQRTx(OracleConnection objConection, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_SolicitudDispensa.agregar(OracleConnection CN_, BE_SolicitudDispensa objSolicitudDispensa) en c:\DESARROLLO\SISDIV\DA\DA_SolicitudDispensa.cs:línea 140
+
+
+
+
+
+TargetSite:
+Void HandleErrorHelper(Int32, Oracle.DataAccess.Client.OracleConnection, IntPtr, Oracle.DataAccess.Client.OpoSqlValCtx*, System.Object, System.String, Boolean)
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 03:56:09 p.m. jueves, 21 de enero de 2016
+
+Message:
+ORA-01843: not a valid month
+ORA-06512: at line 1
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+DA
+
+
+
+
+
+StackTrace:
+   en DA.DA_SolicitudDispensa.agregar(OracleConnection CN_, BE_SolicitudDispensa objSolicitudDispensa) en c:\DESARROLLO\SISDIV\DA\DA_SolicitudDispensa.cs:línea 149
+   en BL.BL_SolicitudDispensa.agregar(OracleConnection CN_, BE_SolicitudDispensa objSolicitudDispensa) en c:\DESARROLLO\SISDIV\BL\BL_SolicitudDispensa.cs:línea 77
+   en BL.BL_SolicitudDispensa.agregarDispensas(BE_SolicitudDispensa objSolicitudDispensa) en c:\DESARROLLO\SISDIV\BL\BL_SolicitudDispensa.cs:línea 36
+
+
+
+
+
+TargetSite:
+Void agregar(Oracle.DataAccess.Client.OracleConnection, BE.BE_SolicitudDispensa)
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 04:02:16 p.m. jueves, 21 de enero de 2016
+
+Message:
+La cadena de entrada no tiene el formato correcto.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+mscorlib
+
+
+
+
+
+StackTrace:
+   en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   en System.Convert.ToInt32(Object value)
+   en Oracle.DataAccess.Client.OracleParameter.PreBind_Int32()
+   en Oracle.DataAccess.Client.OracleParameter.PreBind(OracleConnection conn, IntPtr errCtx, Int32 arraySize)
+   en Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en JNE.UTILITARIO.Oracle_Helper.ExecuteNonQuery(OracleConnection connection, CommandType commandType, String commandText, OracleParameter[] commandParameters)
+   en JNE.UTILITARIO.Oracle_Entity.EjecutarQRTx(OracleConnection objConection, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Dispensa.agregar(OracleConnection CN_, BE_Dispensa objDispensa) en c:\DESARROLLO\SISDIV\DA\DA_Dispensa.cs:línea 112
+
+
+
+
+
+TargetSite:
+Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 04:02:16 p.m. jueves, 21 de enero de 2016
+
+Message:
+La cadena de entrada no tiene el formato correcto.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+DA
+
+
+
+
+
+StackTrace:
+   en DA.DA_Dispensa.agregar(OracleConnection CN_, BE_Dispensa objDispensa) en c:\DESARROLLO\SISDIV\DA\DA_Dispensa.cs:línea 122
+   en BL.BL_Dispensa.agregar(OracleConnection CN_, BE_Dispensa objDispensa) en c:\DESARROLLO\SISDIV\BL\BL_Dispensa.cs:línea 21
+   en BL.BL_SolicitudDispensa.agregarDispensas(BE_SolicitudDispensa objSolicitudDispensa) en c:\DESARROLLO\SISDIV\BL\BL_SolicitudDispensa.cs:línea 47
+
+
+
+
+
+TargetSite:
+Void agregar(Oracle.DataAccess.Client.OracleConnection, BE.BE_Dispensa)
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 04:04:49 p.m. jueves, 21 de enero de 2016
+
+Message:
+La cadena de entrada no tiene el formato correcto.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+mscorlib
+
+
+
+
+
+StackTrace:
+   en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   en System.Convert.ToInt32(Object value)
+   en Oracle.DataAccess.Client.OracleParameter.PreBind_Int32()
+   en Oracle.DataAccess.Client.OracleParameter.PreBind(OracleConnection conn, IntPtr errCtx, Int32 arraySize)
+   en Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en JNE.UTILITARIO.Oracle_Helper.ExecuteNonQuery(OracleConnection connection, CommandType commandType, String commandText, OracleParameter[] commandParameters)
+   en JNE.UTILITARIO.Oracle_Entity.EjecutarQRTx(OracleConnection objConection, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Dispensa.agregar(OracleConnection CN_, BE_Dispensa objDispensa) en c:\DESARROLLO\SISDIV\DA\DA_Dispensa.cs:línea 112
+
+
+
+
+
+TargetSite:
+Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 04:04:49 p.m. jueves, 21 de enero de 2016
+
+Message:
+La cadena de entrada no tiene el formato correcto.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+DA
+
+
+
+
+
+StackTrace:
+   en DA.DA_Dispensa.agregar(OracleConnection CN_, BE_Dispensa objDispensa) en c:\DESARROLLO\SISDIV\DA\DA_Dispensa.cs:línea 122
+   en BL.BL_Dispensa.agregar(OracleConnection CN_, BE_Dispensa objDispensa) en c:\DESARROLLO\SISDIV\BL\BL_Dispensa.cs:línea 21
+   en BL.BL_SolicitudDispensa.agregarDispensas(BE_SolicitudDispensa objSolicitudDispensa) en c:\DESARROLLO\SISDIV\BL\BL_SolicitudDispensa.cs:línea 47
+
+
+
+
+
+TargetSite:
+Void agregar(Oracle.DataAccess.Client.OracleConnection, BE.BE_Dispensa)
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 04:07:43 p.m. jueves, 21 de enero de 2016
+
+Message:
+ORA-06550: line 1, column 7:
+PLS-00306: wrong number or types of arguments in call to 'ADD_VIRTUAL'
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+Oracle Data Provider for .NET
+
+
+
+
+
+StackTrace:
+   en Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   en Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   en Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en JNE.UTILITARIO.Oracle_Helper.ExecuteNonQuery(OracleConnection connection, CommandType commandType, String commandText, OracleParameter[] commandParameters)
+   en JNE.UTILITARIO.Oracle_Entity.EjecutarQRTx(OracleConnection objConection, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_CausaRequisito.agregar(OracleConnection CN_, BE_CausaRequisito objCausaRequisito) en c:\DESARROLLO\SISDIV\DA\DA_CausaRequisito.cs:línea 72
+
+
+
+
+
+TargetSite:
+Void HandleErrorHelper(Int32, Oracle.DataAccess.Client.OracleConnection, IntPtr, Oracle.DataAccess.Client.OpoSqlValCtx*, System.Object, System.String, Boolean)
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 04:08:04 p.m. jueves, 21 de enero de 2016
+
+Message:
+ORA-06550: line 1, column 7:
+PLS-00306: wrong number or types of arguments in call to 'ADD_VIRTUAL'
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+DA
+
+
+
+
+
+StackTrace:
+   en DA.DA_CausaRequisito.agregar(OracleConnection CN_, BE_CausaRequisito objCausaRequisito) en c:\DESARROLLO\SISDIV\DA\DA_CausaRequisito.cs:línea 82
+   en BL.BL_CausaRequisito.agregar(OracleConnection CN_, BE_CausaRequisito objCausaRequisito) en c:\DESARROLLO\SISDIV\BL\BL_CausaRequisito.cs:línea 21
+   en BL.BL_SolicitudDispensa.agregarDispensas(BE_SolicitudDispensa objSolicitudDispensa) en c:\DESARROLLO\SISDIV\BL\BL_SolicitudDispensa.cs:línea 55
+
+
+
+
+
+TargetSite:
+Void agregar(Oracle.DataAccess.Client.OracleConnection, BE.BE_CausaRequisito)
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------

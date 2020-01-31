@@ -1,0 +1,1295 @@
+
+Entrada Log : 
+Detalle de Hora: 09:27:17 a.m. jueves, 07 de enero de 2016
+
+Message:
+La cadena de entrada no tiene el formato correcto.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+JNE.UTILITARIO
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Causa.listarCausaPorProceso(BE_Causa objCausaBE) en c:\DESARROLLO\SISDIV\DA\DA_Causa.cs:línea 45
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 09:28:51 a.m. jueves, 07 de enero de 2016
+
+Message:
+La cadena de entrada no tiene el formato correcto.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+JNE.UTILITARIO
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Causa.listarCausaPorProceso(BE_Causa objCausaBE) en c:\DESARROLLO\SISDIV\DA\DA_Causa.cs:línea 45
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 09:31:22 a.m. jueves, 07 de enero de 2016
+
+Message:
+La cadena de entrada no tiene el formato correcto.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+JNE.UTILITARIO
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Causa.listarCausaPorProceso(BE_Causa objCausaBE) en c:\DESARROLLO\SISDIV\DA\DA_Causa.cs:línea 45
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 09:31:54 a.m. jueves, 07 de enero de 2016
+
+Message:
+La cadena de entrada no tiene el formato correcto.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+JNE.UTILITARIO
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Causa.listarCausaPorProceso(BE_Causa objCausaBE) en c:\DESARROLLO\SISDIV\DA\DA_Causa.cs:línea 45
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 09:40:00 a.m. jueves, 07 de enero de 2016
+
+Message:
+La cadena de entrada no tiene el formato correcto.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+JNE.UTILITARIO
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Causa.listarCausaPorProceso(BE_Causa objCausaBE) en c:\DESARROLLO\SISDIV\DA\DA_Causa.cs:línea 45
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 09:40:40 a.m. jueves, 07 de enero de 2016
+
+Message:
+La cadena de entrada no tiene el formato correcto.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+JNE.UTILITARIO
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Causa.listarCausaPorProceso(BE_Causa objCausaBE) en c:\DESARROLLO\SISDIV\DA\DA_Causa.cs:línea 45
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 09:41:25 a.m. jueves, 07 de enero de 2016
+
+Message:
+La cadena de entrada no tiene el formato correcto.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+JNE.UTILITARIO
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Causa.listarCausaPorProceso(BE_Causa objCausaBE) en c:\DESARROLLO\SISDIV\DA\DA_Causa.cs:línea 45
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 09:53:42 a.m. jueves, 07 de enero de 2016
+
+Message:
+La cadena de entrada no tiene el formato correcto.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+JNE.UTILITARIO
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Causa.listarCausaPorProceso(BE_Causa objCausaBE) en c:\DESARROLLO\SISDIV\DA\DA_Causa.cs:línea 45
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 09:54:22 a.m. jueves, 07 de enero de 2016
+
+Message:
+La cadena de entrada no tiene el formato correcto.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+JNE.UTILITARIO
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Causa.listarCausaPorProceso(BE_Causa objCausaBE) en c:\DESARROLLO\SISDIV\DA\DA_Causa.cs:línea 45
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 09:57:42 a.m. jueves, 07 de enero de 2016
+
+Message:
+La cadena de entrada no tiene el formato correcto.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+JNE.UTILITARIO
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Causa.listarCausaPorProceso(BE_Causa objCausaBE) en c:\DESARROLLO\SISDIV\DA\DA_Causa.cs:línea 45
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 09:58:10 a.m. jueves, 07 de enero de 2016
+
+Message:
+La cadena de entrada no tiene el formato correcto.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+JNE.UTILITARIO
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Causa.listarCausaPorProceso(BE_Causa objCausaBE) en c:\DESARROLLO\SISDIV\DA\DA_Causa.cs:línea 45
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 10:04:22 a.m. jueves, 07 de enero de 2016
+
+Message:
+La cadena de entrada no tiene el formato correcto.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+JNE.UTILITARIO
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Causa.listarCausaPorProceso(BE_Causa objCausaBE) en c:\DESARROLLO\SISDIV\DA\DA_Causa.cs:línea 45
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 10:04:27 a.m. jueves, 07 de enero de 2016
+
+Message:
+La cadena de entrada no tiene el formato correcto.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+JNE.UTILITARIO
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Causa.listarCausaPorProceso(BE_Causa objCausaBE) en c:\DESARROLLO\SISDIV\DA\DA_Causa.cs:línea 45
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 10:04:27 a.m. jueves, 07 de enero de 2016
+
+Message:
+La cadena de entrada no tiene el formato correcto.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+JNE.UTILITARIO
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Causa.listarCausaPorProceso(BE_Causa objCausaBE) en c:\DESARROLLO\SISDIV\DA\DA_Causa.cs:línea 45
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 10:04:28 a.m. jueves, 07 de enero de 2016
+
+Message:
+La cadena de entrada no tiene el formato correcto.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+JNE.UTILITARIO
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Causa.listarCausaPorProceso(BE_Causa objCausaBE) en c:\DESARROLLO\SISDIV\DA\DA_Causa.cs:línea 45
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 10:04:40 a.m. jueves, 07 de enero de 2016
+
+Message:
+La cadena de entrada no tiene el formato correcto.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+JNE.UTILITARIO
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Causa.listarCausaPorProceso(BE_Causa objCausaBE) en c:\DESARROLLO\SISDIV\DA\DA_Causa.cs:línea 45
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 10:07:17 a.m. jueves, 07 de enero de 2016
+
+Message:
+La cadena de entrada no tiene el formato correcto.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+JNE.UTILITARIO
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Causa.listarCausaPorProceso(BE_Causa objCausaBE) en c:\DESARROLLO\SISDIV\DA\DA_Causa.cs:línea 45
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 10:10:02 a.m. jueves, 07 de enero de 2016
+
+Message:
+La cadena de entrada no tiene el formato correcto.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+JNE.UTILITARIO
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Causa.listarCausaPorProceso(BE_Causa objCausaBE) en c:\DESARROLLO\SISDIV\DA\DA_Causa.cs:línea 45
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 10:11:46 a.m. jueves, 07 de enero de 2016
+
+Message:
+La cadena de entrada no tiene el formato correcto.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+JNE.UTILITARIO
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Causa.listarCausaPorProceso(BE_Causa objCausaBE) en c:\DESARROLLO\SISDIV\DA\DA_Causa.cs:línea 45
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 10:15:57 a.m. jueves, 07 de enero de 2016
+
+Message:
+La cadena de entrada no tiene el formato correcto.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+JNE.UTILITARIO
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Causa.listarCausaPorProceso(BE_Causa objCausaBE) en c:\DESARROLLO\SISDIV\DA\DA_Causa.cs:línea 45
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 10:16:35 a.m. jueves, 07 de enero de 2016
+
+Message:
+La cadena de entrada no tiene el formato correcto.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+JNE.UTILITARIO
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Causa.listarCausaPorProceso(BE_Causa objCausaBE) en c:\DESARROLLO\SISDIV\DA\DA_Causa.cs:línea 45
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 10:20:12 a.m. jueves, 07 de enero de 2016
+
+Message:
+La cadena de entrada no tiene el formato correcto.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+JNE.UTILITARIO
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Causa.listarCausaPorProceso(BE_Causa objCausaBE) en c:\DESARROLLO\SISDIV\DA\DA_Causa.cs:línea 45
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 03:07:41 p.m. jueves, 07 de enero de 2016
+
+Message:
+No se ha encontrado la columna especificada en el juego de resultados
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+Oracle.DataAccess
+
+
+
+
+
+StackTrace:
+   en Oracle.DataAccess.Client.OracleDataReader.GetOrdinal(String name)
+   en DA.DA_Util.GetInt(IDataReader dr, String nombreColumna) en c:\DESARROLLO\SISDIV\DA\DA_Util.cs:línea 75
+   en DA.DA_Causa.listarRequisitosPorCausa(BE_Causa objCausaBE) en c:\DESARROLLO\SISDIV\DA\DA_Causa.cs:línea 117
+
+
+
+
+
+TargetSite:
+Int32 GetOrdinal(System.String)
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 03:07:43 p.m. jueves, 07 de enero de 2016
+
+Message:
+No se ha encontrado la columna especificada en el juego de resultados
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+Oracle.DataAccess
+
+
+
+
+
+StackTrace:
+   en Oracle.DataAccess.Client.OracleDataReader.GetOrdinal(String name)
+   en DA.DA_Util.GetInt(IDataReader dr, String nombreColumna) en c:\DESARROLLO\SISDIV\DA\DA_Util.cs:línea 75
+   en DA.DA_Causa.listarRequisitosPorCausa(BE_Causa objCausaBE) en c:\DESARROLLO\SISDIV\DA\DA_Causa.cs:línea 117
+
+
+
+
+
+TargetSite:
+Int32 GetOrdinal(System.String)
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 03:07:47 p.m. jueves, 07 de enero de 2016
+
+Message:
+No se ha encontrado la columna especificada en el juego de resultados
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+Oracle.DataAccess
+
+
+
+
+
+StackTrace:
+   en Oracle.DataAccess.Client.OracleDataReader.GetOrdinal(String name)
+   en DA.DA_Util.GetInt(IDataReader dr, String nombreColumna) en c:\DESARROLLO\SISDIV\DA\DA_Util.cs:línea 75
+   en DA.DA_Causa.listarRequisitosPorCausa(BE_Causa objCausaBE) en c:\DESARROLLO\SISDIV\DA\DA_Causa.cs:línea 117
+
+
+
+
+
+TargetSite:
+Int32 GetOrdinal(System.String)
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 03:07:47 p.m. jueves, 07 de enero de 2016
+
+Message:
+No se ha encontrado la columna especificada en el juego de resultados
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+Oracle.DataAccess
+
+
+
+
+
+StackTrace:
+   en Oracle.DataAccess.Client.OracleDataReader.GetOrdinal(String name)
+   en DA.DA_Util.GetInt(IDataReader dr, String nombreColumna) en c:\DESARROLLO\SISDIV\DA\DA_Util.cs:línea 75
+   en DA.DA_Causa.listarRequisitosPorCausa(BE_Causa objCausaBE) en c:\DESARROLLO\SISDIV\DA\DA_Causa.cs:línea 117
+
+
+
+
+
+TargetSite:
+Int32 GetOrdinal(System.String)
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 03:09:38 p.m. jueves, 07 de enero de 2016
+
+Message:
+No se ha encontrado la columna especificada en el juego de resultados
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+Oracle.DataAccess
+
+
+
+
+
+StackTrace:
+   en Oracle.DataAccess.Client.OracleDataReader.GetOrdinal(String name)
+   en DA.DA_Util.GetInt(IDataReader dr, String nombreColumna) en c:\DESARROLLO\SISDIV\DA\DA_Util.cs:línea 75
+   en DA.DA_Causa.listarRequisitosPorCausa(BE_Causa objCausaBE) en c:\DESARROLLO\SISDIV\DA\DA_Causa.cs:línea 117
+
+
+
+
+
+TargetSite:
+Int32 GetOrdinal(System.String)
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 04:53:57 p.m. jueves, 07 de enero de 2016
+
+Message:
+Referencia a objeto no establecida como instancia de un objeto.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+JNE.UTILITARIO
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Causa.listarAllRequisitos(BE_Causa objCausaBE) en c:\DESARROLLO\SISDIV\DA\DA_Causa.cs:línea 167
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 04:58:04 p.m. jueves, 07 de enero de 2016
+
+Message:
+Referencia a objeto no establecida como instancia de un objeto.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+JNE.UTILITARIO
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Causa.listarAllRequisitos(BE_Causa objCausaBE) en c:\DESARROLLO\SISDIV\DA\DA_Causa.cs:línea 167
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 05:01:41 p.m. jueves, 07 de enero de 2016
+
+Message:
+Referencia a objeto no establecida como instancia de un objeto.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+JNE.UTILITARIO
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Causa.listarAllRequisitos(BE_Causa objCausaBE) en c:\DESARROLLO\SISDIV\DA\DA_Causa.cs:línea 167
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------

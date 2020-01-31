@@ -1,0 +1,285 @@
+
+Entrada Log : 
+Detalle de Hora: 10:16:05 a.m. martes, 26 de enero de 2016
+
+Message:
+ORA-01722: invalid number
+ORA-06512: at "DISPENSA.PKG_DISPENSAS", line 887
+ORA-06512: at line 1
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+Oracle Data Provider for .NET
+
+
+
+
+
+StackTrace:
+   en Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   en Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   en Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en JNE.UTILITARIO.Oracle_Helper.ExecuteNonQuery(OracleConnection connection, CommandType commandType, String commandText, OracleParameter[] commandParameters)
+   en JNE.UTILITARIO.Oracle_Entity.EjecutarQRTx(OracleConnection objConection, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Dispensa.agregar(OracleConnection CN_, BE_Dispensa objDispensa) en c:\DESARROLLO\SISDIV\DA\DA_Dispensa.cs:línea 114
+
+
+
+
+
+TargetSite:
+Void HandleErrorHelper(Int32, Oracle.DataAccess.Client.OracleConnection, IntPtr, Oracle.DataAccess.Client.OpoSqlValCtx*, System.Object, System.String, Boolean)
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 10:16:05 a.m. martes, 26 de enero de 2016
+
+Message:
+ORA-01722: invalid number
+ORA-06512: at "DISPENSA.PKG_DISPENSAS", line 887
+ORA-06512: at line 1
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+DA
+
+
+
+
+
+StackTrace:
+   en DA.DA_Dispensa.agregar(OracleConnection CN_, BE_Dispensa objDispensa) en c:\DESARROLLO\SISDIV\DA\DA_Dispensa.cs:línea 124
+   en BL.BL_Dispensa.agregar(OracleConnection CN_, BE_Dispensa objDispensa) en c:\DESARROLLO\SISDIV\BL\BL_Dispensa.cs:línea 21
+   en BL.BL_SolicitudDispensa.agregarDispensas(BE_SolicitudDispensa objSolicitudDispensa) en c:\DESARROLLO\SISDIV\BL\BL_SolicitudDispensa.cs:línea 49
+
+
+
+
+
+TargetSite:
+Void agregar(Oracle.DataAccess.Client.OracleConnection, BE.BE_Dispensa)
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 10:21:21 a.m. martes, 26 de enero de 2016
+
+Message:
+ORA-01722: invalid number
+ORA-06512: at "DISPENSA.PKG_DISPENSAS", line 887
+ORA-06512: at line 1
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+Oracle Data Provider for .NET
+
+
+
+
+
+StackTrace:
+   en Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   en Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   en Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en JNE.UTILITARIO.Oracle_Helper.ExecuteNonQuery(OracleConnection connection, CommandType commandType, String commandText, OracleParameter[] commandParameters)
+   en JNE.UTILITARIO.Oracle_Entity.EjecutarQRTx(OracleConnection objConection, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Dispensa.agregar(OracleConnection CN_, BE_Dispensa objDispensa) en c:\DESARROLLO\SISDIV\DA\DA_Dispensa.cs:línea 114
+
+
+
+
+
+TargetSite:
+Void HandleErrorHelper(Int32, Oracle.DataAccess.Client.OracleConnection, IntPtr, Oracle.DataAccess.Client.OpoSqlValCtx*, System.Object, System.String, Boolean)
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 10:21:21 a.m. martes, 26 de enero de 2016
+
+Message:
+ORA-01722: invalid number
+ORA-06512: at "DISPENSA.PKG_DISPENSAS", line 887
+ORA-06512: at line 1
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+DA
+
+
+
+
+
+StackTrace:
+   en DA.DA_Dispensa.agregar(OracleConnection CN_, BE_Dispensa objDispensa) en c:\DESARROLLO\SISDIV\DA\DA_Dispensa.cs:línea 124
+   en BL.BL_Dispensa.agregar(OracleConnection CN_, BE_Dispensa objDispensa) en c:\DESARROLLO\SISDIV\BL\BL_Dispensa.cs:línea 21
+   en BL.BL_SolicitudDispensa.agregarDispensas(BE_SolicitudDispensa objSolicitudDispensa) en c:\DESARROLLO\SISDIV\BL\BL_SolicitudDispensa.cs:línea 49
+
+
+
+
+
+TargetSite:
+Void agregar(Oracle.DataAccess.Client.OracleConnection, BE.BE_Dispensa)
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 10:24:16 a.m. martes, 26 de enero de 2016
+
+Message:
+ORA-01722: invalid number
+ORA-06512: at "DISPENSA.PKG_DISPENSAS", line 887
+ORA-06512: at line 1
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+Oracle Data Provider for .NET
+
+
+
+
+
+StackTrace:
+   en Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   en Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   en Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   en JNE.UTILITARIO.Oracle_Helper.ExecuteNonQuery(OracleConnection connection, CommandType commandType, String commandText, OracleParameter[] commandParameters)
+   en JNE.UTILITARIO.Oracle_Entity.EjecutarQRTx(OracleConnection objConection, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Dispensa.agregar(OracleConnection CN_, BE_Dispensa objDispensa) en c:\DESARROLLO\SISDIV\DA\DA_Dispensa.cs:línea 114
+
+
+
+
+
+TargetSite:
+Void HandleErrorHelper(Int32, Oracle.DataAccess.Client.OracleConnection, IntPtr, Oracle.DataAccess.Client.OpoSqlValCtx*, System.Object, System.String, Boolean)
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+Entrada Log : 
+Detalle de Hora: 10:24:16 a.m. martes, 26 de enero de 2016
+
+Message:
+ORA-01722: invalid number
+ORA-06512: at "DISPENSA.PKG_DISPENSAS", line 887
+ORA-06512: at line 1
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+DA
+
+
+
+
+
+StackTrace:
+   en DA.DA_Dispensa.agregar(OracleConnection CN_, BE_Dispensa objDispensa) en c:\DESARROLLO\SISDIV\DA\DA_Dispensa.cs:línea 124
+   en BL.BL_Dispensa.agregar(OracleConnection CN_, BE_Dispensa objDispensa) en c:\DESARROLLO\SISDIV\BL\BL_Dispensa.cs:línea 21
+   en BL.BL_SolicitudDispensa.agregarDispensas(BE_SolicitudDispensa objSolicitudDispensa) en c:\DESARROLLO\SISDIV\BL\BL_SolicitudDispensa.cs:línea 49
+
+
+
+
+
+TargetSite:
+Void agregar(Oracle.DataAccess.Client.OracleConnection, BE.BE_Dispensa)
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------

@@ -1,0 +1,42 @@
+
+Entrada Log : 
+Detalle de Hora: 04:03:15 p.m. lunes, 18 de enero de 2016
+
+Message:
+Índice fuera de los límites de la matriz.
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+DA
+
+
+
+
+
+StackTrace:
+   en DA.DA_MTD.ActualizarContacto(BE_MTD objMTDBE) en c:\DESARROLLO\SISDIV\DA\DA_MTD.cs:línea 94
+
+
+
+
+
+TargetSite:
+Int32 ActualizarContacto(BE.BE_MTD)
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------

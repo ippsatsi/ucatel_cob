@@ -1,0 +1,45 @@
+
+Entrada Log : 
+Detalle de Hora: 11:44:11 a.m. lunes, 11 de enero de 2016
+
+Message:
+ORA-03135: la conexión ha perdido contacto
+Identificador de Proceso: 0
+Identificador de Sesión: 85 Número de Serie: 19846
+
+
+
+
+
+HelpLink:
+
+
+
+
+
+
+Source:
+Oracle Data Provider for .NET
+
+
+
+
+
+StackTrace:
+   en JNE.UTILITARIO.Oracle_Entity.ObtenerDR(OracleConnection cn, String nombreSP, OracleParameter[] parametros)
+   en DA.DA_Ubigeo.listarDepartamento() en c:\DESARROLLO\SISDIV\DA\DA_Ubigeo.cs:línea 37
+
+
+
+
+
+TargetSite:
+Oracle.DataAccess.Client.OracleDataReader ObtenerDR(Oracle.DataAccess.Client.OracleConnection, System.String, Oracle.DataAccess.Client.OracleParameter[])
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------

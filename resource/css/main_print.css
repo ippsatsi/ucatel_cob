@@ -1,0 +1,54 @@
+﻿#wrap header {
+    visibility: hidden;
+    display: none;
+}
+
+.fondo_sol_cor .sol_cor_span_01 {
+    visibility: hidden;
+    display: none;
+}
+
+.fondo_sol_cor .sol_cor_div_02 {
+    visibility: hidden;
+    display: none !important;
+}
+
+.div_btns_solicitud {
+    visibility: hidden;
+    display: none !important;
+}
+
+.fondo_sol_cor {
+    background: none !important;
+    border: none !important;
+    height: 0px !important;
+}
+
+    .fondo_sol_cor .sol_car_div_04 {
+        border: none;
+        background: none;
+        color: #000;
+    }
+
+        .fondo_sol_cor .sol_car_div_04 .sol_car_div_04_02 {
+            height: auto !important;
+            padding-bottom: 10px !important;
+        }
+
+.sol_cor_terminos_condiciones {
+    height: auto;
+    font-size: 13px;
+    color: #46515F;
+    padding: 8px 30px;
+    background: none;
+    /*float: left;*/
+    border: none;
+}
+
+    .sol_cor_terminos_condiciones p {
+        padding: 4px 0px;
+    }
+
+        .sol_cor_terminos_condiciones p:first-child {
+            padding-top: 20px;
+        }
