@@ -67,7 +67,7 @@ $contenido =<<<Final
     <input type="hidden" id="txtCodigoCartera" value="0"/>
     <input type="hidden" id="txtCodigoSubCartera" value="0"/>
     <input type="hidden" id="txtCodigoGestion" value="0"/>
-    <input type="hidden" id="txtCodigoRol" runat="server" value="0"/>
+    <input type="hidden" id="txtCodigoRol" value="0"/>
     <div class="row">
         <div>
           <div class="panel panel-default">
@@ -206,8 +206,8 @@ $script =<<<Final
 
     function cargarPagos(codigo) {
         $.ajax({
-            url: "../resource/service/pago.asmx/obtenerPagos",
-            data: '{"codigo":' + codigo + '}',
+            url: strServicio + "gestion.php",
+            data: '{"codigo":' + codigo + ', "CONSULTA_AJAX":"obtenerPagos"}',
             dataType: 'JSON',
             type: 'POST',
             contentType: "application/json; charset=utf-8",
@@ -218,9 +218,9 @@ $script =<<<Final
 
                 $.each(jsondata.d, function (i, obj) {
                     htmlText = "<tr>" +
-                        "<td style='text-align:right; height: 35px;'>" + obj.FECHAPAGO + "</td>" +
-                        "<td style='text-align:right;height: 35px;'>" + obj.MONTOPAGO + "</td>" +
-                        "<td style='text-align:right;height: 35px;'>" + obj.TPA_DESCRIPCION + "</td>" +
+                        "<td style='text-align:right; height: 35px;'>" + obj.FECHA + "</td>" +
+                        "<td style='text-align:right;height: 35px;'>" + obj.PAG_MONTO + "</td>" +
+                        "<td style='text-align:right;height: 35px;'>" + (obj.TPA_DESCRIPCION==null? "":obj.TPA_DESCRIPCION) + "</td>" +
                     "</tr>";
                     $("#tblPago tbody").append(htmlText);
                 });

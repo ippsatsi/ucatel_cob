@@ -13,6 +13,7 @@ class Usuario extends DB
     private $user_descripcion;
     private $user_troncal;
     private $user_contexto;
+    private $url_master;
 
     public function user_info($user, $password) {
         $query = "EXEC COBRANZA.SP_LOGIN ?, ?";
@@ -67,6 +68,31 @@ class Usuario extends DB
         return $this->user_id;
     }
 
+    public function getUserRol()
+    {
+        return $this->user_rol;
+    }
+
+    public function getUserAnexo()
+    {
+        return $this->user_anexo;
+    }
+
+    public function getUserTroncalCh()
+    {
+        return $this->user_troncal;
+    }
+
+    public function getUserContextSip()
+    {
+        return $this->user_contexto;
+    }
+    
+    public function setUrlMaster($url)
+    {
+        $this->url_master = $url;
+    }
+
     public function getMenuByRol()
     {
         $query = "EXEC COBRANZA.SP_MENU_POR_ROL ?";
@@ -79,6 +105,7 @@ class Usuario extends DB
         $html = "  <ul class='page-sidebar-menu  page-header-fixed page-sidebar-menu-light ' data-keep-expanded='false' data-auto-scroll='true' data-slide-speed='200'>";
         $html_final = '';
         $primer_padre = true;
+        $url_base = $this->url_master;
         if ( $obtener_menu->rowCount() > 0 ) :
              while ( $menu = $obtener_menu->fetch( PDO::FETCH_ASSOC ) ) {
                 if ( $menu["PAG_ES_PADRE"] == 1 ) :
@@ -89,7 +116,7 @@ class Usuario extends DB
                 else:
                     $url = str_replace(".aspx", ".php", $menu['PAG_URL']);
                     $html .= "      <li  class='nav-item'>\n";
-                    $html .= "        <a href='${url}' class='nav-link nav-toggle'>\n";
+                    $html .= "        <a href='${url_base}${url}' class='nav-link nav-toggle'>\n";
                     $html .= "          <i class='${menu["PAG_ICON"]}'></i>\n";
                     $html .= "          <span class='title'>${menu["PAG_TITLE"]}</span>\n";
                     $html .= "        </a>\n";

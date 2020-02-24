@@ -70,9 +70,33 @@ if ( isset($_GET['CONSULTA_AJAX']) ) :
         //print_r($resultado);
         echo json_encode($resultado);
     endif;
+
+    //BANDEJA CONVENIOS
+    if ( $_GET['CONSULTA_AJAX'] == 'bandejaConvenios') :
+        $data = json_decode(file_get_contents('php://input'), true);
+
+        if (  is_array($data)) :
+            $band_convenios = new Bandejas();
+            $parametros_criterio = $data['criterio'];
+            $parametros = array(
+                ":cuenta" => $parametros_criterio['NroCuenta'],
+                ":dni" => $parametros_criterio['Dni'],
+                ":nombre" => $parametros_criterio['Cliente'],
+                ":tipo_fecha" => $parametros_criterio['Todos'],
+                ":desde" => $parametros_criterio['desde'],
+                ":hasta" => $parametros_criterio['hasta'],
+                ":estado" => $parametros_criterio['Estado']
+            );
+            //{"criterio":{"NroCuenta":"","Dni":"","Cliente":"","Todos":"0","desde":"14/02/2020","hasta":"14/02/2020","Estado":"1"}
+            $resultado = $band_convenios->getBandejaConvenios($parametros);
+            header('Content-Type: application/json; charset=UTF-8');
+            //var_dump($resultado);
+            //print_r($resultado);
+            echo json_encode($resultado);
+        endif;
+    endif;
+
 endif;
-
-
 
 exit;
 
