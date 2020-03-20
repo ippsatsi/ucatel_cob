@@ -124,7 +124,7 @@ $(document).ready(function () {
 
 function obtenerNotificacion() {
     $.ajax({
-        url: strServicio + "general.asmx/obtenerNotificador",
+        url: strServicio + "notificador.php",
         dataType: "json",
         type: "POST",
         contentType: "application/json; charset=utf-8",
@@ -187,7 +187,7 @@ function EliminarSesiones(strRedireccionar) {
         bootbox.confirm("¿Esta seguro que desea salir del sistema?", function (answer) {
             if (!answer) return;
             else {
-              location.href = 'logout.php';
+              location.href = strPath + 'logout.php';
                 // $.ajax({
                 //     url: strServicio + "menu.asmx/EliminarSesiones",
                 //     data: '',

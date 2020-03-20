@@ -4,6 +4,11 @@
 
 require_once "clases/sesiones_class.php";
 require_once "clases/usuario_class.php";
+require_once "url_relativa.php";
+/*echo "<pre>";
+var_dump($_SERVER);
+echo "</pre>";
+exit;*/
 $sesion = new Sesiones();
 $user = new Usuario();
 
@@ -16,7 +21,9 @@ if ( !isset($_SESSION['usuario']) ) :
         $sesion->setDatosUsuario($datos_usuario);
         $sesion->setUsuarioActual($login);
         $user->setUserInfo();
+        $user->setUrlMaster($ruta_web);
         //cargar inicio.php
+
     else:
         header('Location:index.php');
         exit;
@@ -24,6 +31,7 @@ if ( !isset($_SESSION['usuario']) ) :
 else:
     //YA TIENE SESION
     $user->setUserInfo();
+    $user->setUrlMaster($ruta_web);
 endif;
 
 // ﻿<!-- <%@ Page Title="" Language="C#" MasterPageFile="resource/masterPage/Template.Master" AutoEventWireup="true" CodeBehind="inicio.aspx.cs" Inherits="WEB.inicio" %> -->
@@ -36,6 +44,7 @@ endif;
 // <!-- <%--<asp:Content ID="Content4" ContentPlaceHolderID="sub_titulo" runat="server"> -->
   $sub_titulo = "Página de inicio";
   $sub_titulo = "";
+  $pageBar = "";
 // <!-- </asp:Content>--%> -->
 require_once "clases/indicadores_class.php";
 $indicadores = new Indicadores;

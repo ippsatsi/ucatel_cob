@@ -87,10 +87,14 @@ class Usuario extends DB
     {
         return $this->user_contexto;
     }
-    
+
     public function setUrlMaster($url)
     {
         $this->url_master = $url;
+    }
+    public function getUrlMaster()
+    {
+        return $this->url_master;
     }
 
     public function getMenuByRol()
@@ -116,7 +120,7 @@ class Usuario extends DB
                 else:
                     $url = str_replace(".aspx", ".php", $menu['PAG_URL']);
                     $html .= "      <li  class='nav-item'>\n";
-                    $html .= "        <a href='${url_base}${url}' class='nav-link nav-toggle'>\n";
+                    $html .= "        <a href='${url_base}${url}' data-master='${url_base}' data-url='${url}' class='nav-link nav-toggle'>\n";
                     $html .= "          <i class='${menu["PAG_ICON"]}'></i>\n";
                     $html .= "          <span class='title'>${menu["PAG_TITLE"]}</span>\n";
                     $html .= "        </a>\n";

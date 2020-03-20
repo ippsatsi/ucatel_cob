@@ -10,7 +10,7 @@ class DB
     private $user;
     private $password;
     private $array_parameter_select_count;
-
+//PDO::SQLSRV_CURSOR_DYNAMIC
     public function __construct()
     {
         $this->server = "192.168.1.248";
@@ -20,6 +20,9 @@ class DB
         $this->array_parameter_select_count = array(
               PDO::ATTR_CURSOR                      => PDO::CURSOR_SCROLL,
               PDO::SQLSRV_ATTR_CURSOR_SCROLL_TYPE   => PDO::SQLSRV_CURSOR_BUFFERED);
+        $this->array_parameter_select_big_count = array(
+              PDO::ATTR_CURSOR                      => PDO::CURSOR_SCROLL,
+              PDO::SQLSRV_ATTR_CURSOR_SCROLL_TYPE   => PDO::SQLSRV_CURSOR_DYNAMIC);
         //este parametro me cuenta el resultado del update, en los select me da -1
         $this->array_parameter_update_count = array(
               PDO::ATTR_CURSOR                      => PDO::CURSOR_FWDONLY);
@@ -45,6 +48,17 @@ class DB
         return $run_query;
     }
 
+    public function run_big_query_wParam($query, $parameters)
+    {
+        //aumentamos el buffer de php para cursores client-side
+        $new_size = 61440;
+        ini_set('pdo_sqlsrv.client_buffer_max_kb_size', $new_size);
+        $this->connect()->setAttribute( PDO::SQLSRV_ATTR_CLIENT_BUFFER_MAX_KB_SIZE, $new_size );
+        $run_query = $this->connect()->prepare($query, $this->array_parameter_select_count);
+        $run_query->execute($parameters);
+
+        return $run_query;
+    }
     public function run_query_update_wParam($query, $parameters)
     {
         $run_query = $this->connect()->prepare($query, $this->array_parameter_update_count);
@@ -76,6 +90,26 @@ class DB
 
         return $result;
     }//endfunction
+
+    public function getListaTipoGestionDB()
+    {
+        $query = "
+            SELECT
+                TPG.TIG_DESCRIPCION AS 'key'
+                , TPG.TIG_CODIGO AS 'value'
+                FROM
+                COBRANZA.GCC_TIPO_GESTION TPG
+                WHERE
+                TPG.TIG_ESTADO_REGISTRO='A'";
+
+        $resultado = $this->run_query($query);
+        $result = array("d" => 0);
+        $array_filas = array();
+        $result['d'] = $resultado->fetchall(PDO::FETCH_ASSOC);
+
+        return $result;
+    }//endfunction
+
 }
 
 

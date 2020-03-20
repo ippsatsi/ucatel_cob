@@ -3,7 +3,7 @@
     $("#txtHasta").val(obtenerFechaActual);
     $("#btn_imprimir").click(imprimirConvenio);
 
-    buscar();
+  //  buscar();
     $("#btn_buscar").click(buscar);
 
     $("#sltEstado").change(function () {
@@ -70,7 +70,7 @@ function buscar() {
     criterio.hasta = $("#txtHasta").val();
     criterio.Estado = $("#sltEstado").val();
     $.ajax({
-        url: strServicio + "cartera.asmx/bandejaConvenios",
+        url: strServicio + "cartera.php?CONSULTA_AJAX=bandejaConvenios",  //strServicio + "cartera.asmx/bandejaConvenios",
         data: '{"criterio":' + JSON.stringify(criterio) + '}',
         dataType: 'JSON',
         type: 'POST',
@@ -134,15 +134,30 @@ function buscar() {
                     //{ mData: "UBI_DISTRITO", "bSortable": true },
                     //{ mData: "UBI_PROVINCIA", "bSortable": true },
                     //{ mData: "FLG_TIENE_CONVENIO", "bSortable": true },
-                    { mData: "TIP_MON_VC", "bSortable": true },
-                    { mData: "GES_IMPORTE_NEGOCIACION", "bSortable": true },
+                    { mData: "DIC_SIMBOLO", "bSortable": true },
+                    //{ mData: "GES_IMPORTE_NEGOCIACION", "bSortable": true },
+                    {
+                        mData: "GES_IMPORTE_NEGOCIACION", "bSortable": true, mRender: function (data, type, row) {
+                          return Number(row['GES_IMPORTE_NEGOCIACION']);
+                        }
+                    },
                     { mData: "CUE_CONVENIO_FECHA_INI", "bSortable": true },
-                    { mData: "CUE_CONVENIO_CUOTA_INI", "bSortable": true },
+                    //{ mData: "CUE_CONVENIO_CUOTA_INI", "bSortable": true },
+                    {
+                        mData: "CUE_CONVENIO_CUOTA_INI", "bSortable": true, mRender: function (data, type, row) {
+                          return Number(row['CUE_CONVENIO_CUOTA_INI']);
+                        }
+                    },
                     { mData: "CUE_CONVENIO_CUOTAS", "bSortable": true },
                     { mData: "CUE_CUOTAS_PAGADAS", "bSortable": true },
                     { mData: "FEC_VENCIMIENTO", "bSortable": true },
                     { mData: "NRO_CUOTA", "bSortable": true },
-                    { mData: "IMP_CUOTA", "bSortable": true },
+                  //  { mData: "IMP_CUOTA", "bSortable": true },
+                    {
+                        mData: "IMP_CUOTA", "bSortable": true, mRender: function (data, type, row) {
+                          return Number(row['IMP_CUOTA']);
+                        }
+                    },
                     {
                         mData: "FLG_PAGO", "bSortable": true, mRender: function (data, type, row) {
                             var htmlText = "PENDIENTE DE PAGO";
@@ -152,7 +167,12 @@ function buscar() {
                             return htmlText;
                         }
                     },
-                    { mData: "PAG_MONTO", "bSortable": true },
+                    //{ mData: "PAG_MONTO", "bSortable": true },
+                    {
+                        mData: "PAG_MONTO", "bSortable": true, mRender: function (data, type, row) {
+                          return Number(row['PAG_MONTO']);
+                        }
+                    },
                     { mData: "PAG_FECHA", "bSortable": true },
                     { mData: "USU_LOGIN", "bSortable": true },
                     { mData: "TXT_MOTIVO_CONVENIO", "bSortable": true },
@@ -174,7 +194,7 @@ function buscar() {
 
 function abrir_gestion_cuenta(cuenta, pago) {
     //target='_blank' href='gestionar-cuenta.aspx?cuenta=" + row["CUE_NROCUENTA"] + "'
-    var url = "gestionar-cuenta.aspx?cuenta=" + cuenta;
+    var url = "gestionar-cuenta.php?cuenta=" + cuenta;
 
     if (pago > 0) {
         bootbox.confirm("Esta cuenta ya tiene un PAGO ¿Esta seguro que desea gestionarla?", function (r) {
@@ -198,17 +218,17 @@ function anular_convenio(codigo) {
 /// agregar limite de 50 caracteres 29.01.18
         if (r) {
             $.ajax({
-                url: strServicio + "cartera.asmx/inactivarConvenio",
-                data: '{"id_cuenta":"' + codigo + '","txt_motivo":"' + r + '"}',
+                url: strServicio + "gestion.php?inactivarConvenio=1",
+                data: '{"id_cuenta":"' + codigo + '","txt_motivo":"' + r + '", "CONSULTA_AJAX":"inactivarConvenio"}',
                 dataType: 'JSON',
                 type: 'POST',
                 contentType: "application/json; charset=utf-8",
                 success: function (data) {
-                    if (data.d == "CORRECTO") {
+                    if (data.d  >  0) {
                         buscar();
-                        jAlert("Inactivación de cuenta realizado correctamente.");
+                        bootbox.alert("Inactivación de cuenta realizado correctamente.");
                     } else {
-                        jAlert("Ocurrio un error por favor vuelva a intentar.");
+                        bootbox.alert("Ocurrio un error por favor vuelva a intentar.");
                     }
                 }
             });

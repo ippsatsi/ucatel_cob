@@ -51,7 +51,7 @@
         showSeconds: true,
         minuteStep: 1
     });
-    
+
     $("#btnRegistrarGestion").click(registrarGestion);
 
     $("#chkRecordatorio").change(habilitarRecordatorio);
@@ -63,9 +63,9 @@
             bootbox.confirm("¿Esta seguro de enviar a este cliente a una busqueda especializada?", function (r) {
                 if (r) {
                         var objBusqueda = new Object();
-                        objBusqueda.CLI_CODIGO = $("#contenido_txtCodigoCliente").val();
-                        objBusqueda.SCA_CODIGO = $("#contenido_txtCodigoSubCartera").val();
-                        objBusqueda.CUE_CODIGO = $("#contenido_txtCodigoCuenta").val();
+                        objBusqueda.CLI_CODIGO = $("#txtCodigoCliente").val();
+                        objBusqueda.SCA_CODIGO = $("#txtCodigoSubCartera").val();
+                        objBusqueda.CUE_CODIGO = $("#txtCodigoCuenta").val();
                         $.ajax({
                             url: strServicio + "gestion.asmx/registrarBusqueda",
                             data: '{"objBusqueda": ' + JSON.stringify(objBusqueda) + '}',
@@ -89,19 +89,19 @@
 });
 
 function cargarDatosIniciales() {
-    if ($("#contenido_txtCodigoTelefono").val() != "0") {
+    if ($("#txtCodigoTelefono").val() != "0") {
         $("#sltTipoGestion").val("5");
         $("#sltTipoGestion").change();
         $("#divTelefono").show();
         $("#divDireccion").hide();
-        $("#sltTelefono").val($("#contenido_txtCodigoTelefono").val());
+        $("#sltTelefono").val($("#txtCodigoTelefono").val());
     }
-    if ($("#contenido_txtCodigoDireccion").val() != "0") {
+    if ($("#txtCodigoDireccion").val() != "0") {
         $("#sltTipoGestion").val("7");
         $("#sltTipoGestion").change();
         $("#divTelefono").hide();
-        $("#divDireccion").show();
-        $("#sltDireccion").val($("#contenido_txtCodigoDireccion").val());
+      //  $("#divDireccion").show();
+      //  $("#sltDireccion").val($("#txtCodigoDireccion").val());
     }
 }
 
@@ -115,8 +115,8 @@ function habilitarRecordatorio() {
 
 function listarTipoGestion() {
     $.ajax({
-        url: strServicio+"general.asmx/listaTipoGestion",
-        data: '{"codigo":"' + $("#contenido_txtCodigoRol").val() + '"}',
+        url: strServicio+"gestion.php?listaTipoGestion=1",
+        data: '{"codigo":"' + $("#txtCodigoRol").val() + '","CONSULTA_AJAX":"listaTipoGestion" }',
         dataType: 'JSON',
         type: 'POST',
         contentType: "application/json; charset=utf-8",
@@ -131,7 +131,7 @@ function listarTipoGestion() {
 }
 
 function comboPorTipoGestion(tipoGestion) {
-    var rol = $("#contenido_txtCodigoRol").val();
+    var rol = $("#txtCodigoRol").val();
     if (tipoGestion == 5 || tipoGestion == 6) {
         $("#divTelefono").show();
         $("#divDireccion").hide();
@@ -145,8 +145,8 @@ function comboPorTipoGestion(tipoGestion) {
 
     $("#sltRespuesta").empty();
     $.ajax({
-        url: strServicio+"general.asmx/listarRespuestaPorTipoGestion",
-        data: "{'sca_codigo':'" + $("#contenido_txtCodigoSubCartera").val() + "','codigo':'" + tipoGestion + "'}",
+        url: strServicio + "gestion.php?listarRespuestaPorTipoGestion=1",
+        data: '{"sca_codigo":"' + $("#txtCodigoSubCartera").val() + '","codigo":"' + tipoGestion + '","CONSULTA_AJAX":"listarRespuestaPorTipoGestion"}',
         dataType: 'JSON',
         type: 'POST',
         contentType: "application/json; charset=utf-8",
@@ -171,8 +171,8 @@ function comboPorTipoGestion(tipoGestion) {
 function comboPorTipoRespuesta(tipoRespuesta) {
     $("#sltSolucion").empty();
     $.ajax({
-        url: strServicio+"general.asmx/listarSolucionPorTipoRespuesta",
-        data: "{'codigo':'" + tipoRespuesta + "'}",
+        url: strServicio + "gestion.php?listarSolucionPorTipoRespuesta=1",
+        data: '{"codigo":"' + tipoRespuesta + '", "CONSULTA_AJAX":"listarSolucionPorTipoRespuesta"}',
         dataType: 'JSON',
         type: 'POST',
         contentType: "application/json; charset=utf-8",
@@ -259,11 +259,11 @@ function activarCampos(campo) {
 
 
 function listarTelefonos() {
-    var rol = $("#contenido_txtCodigoRol").val();
+    var rol = $("#txtCodigoRol").val();
     $.ajax({
-        url: strServicio+"general.asmx/listarTelefonos",
-  //      data: '{"dni":"' + $("#contenido_txtDni").val() + '"}',
-        data: '{"dni":"' + '|' + $("#contenido_txtCodigoCuenta").val() + '"}',//se usa nrode cuenta en vez de dni
+        url: strServicio+"gestion.php?listarTelefonos=1",
+  //      data: '{"dni":"' + $("#txtDni").val() + '"}',
+        data: '{"dni":"' + '|' + $("#txtCodigoCuenta").val() + '", "CONSULTA_AJAX":"listarTelefonos"}',//se usa nrode cuenta en vez de dni
         dataType: 'JSON',
         type: 'POST',
         contentType: "application/json; charset=utf-8",
@@ -271,7 +271,7 @@ function listarTelefonos() {
         success: function (jsondata) {
             $("#sltTelefono").html("<option value='0'>-SIN ESPECIFICAR-</option>");
             $.each(jsondata.d, function (i, obj) {
-                $("#sltTelefono").append("<option value='" + obj.TEL_CODIGO + "'>" + obj.TEL_NUMERO + " (" + obj.TEL_ORIGEN + ")" + "</option>");
+                $("#sltTelefono").append("<option value='" + obj.TEL_CODIGO + "'>" + obj.TEL_NUMERO + " (" + obj.TOR_DESCRIPCION + ")" + "</option>");
             });
         }
     });
@@ -280,11 +280,11 @@ function listarTelefonos() {
 
 
 function listarDirecciones() {
-    var rol = $("#contenido_txtCodigoRol").val();
+    var rol = $("#txtCodigoRol").val();
     $.ajax({
-        url: strServicio+"general.asmx/listarDirecciones",
- //       data: '{"dni":"' + $("#contenido_txtDni").val() + '"}',
-        data: '{"dni":"' + '|' + $("#contenido_txtCodigoCuenta").val() + '"}',//se usa CUE_CODIGO (NO HAY NRO DE CUENTA) en vez de dni
+        url: strServicio+"gestion.php?listarDirecciones=1",
+ //       data: '{"dni":"' + $("#txtDni").val() + '"}',
+        data: '{"dni":"' + '|' + $("#txtCodigoCuenta").val() + '", "CONSULTA_AJAX":"listarDirecciones"}',//se usa CUE_CODIGO (NO HAY NRO DE CUENTA) en vez de dni
         dataType: 'JSON',
         type: 'POST',
         contentType: "application/json; charset=utf-8",
@@ -308,7 +308,7 @@ $("#txtFechaInicial").change(function () {
 
 function calcularMonto() {
     try {
-        var rol = $("#contenido_txtCodigoRol").val();
+        var rol = $("#txtCodigoRol").val();
         var montoNegociado = parseFloat($("#txtMontoNegociacion").val());
         var numeroCuotas = parseFloat($("#txtNroCuotas").val());
         var montoRecibo;
@@ -484,10 +484,10 @@ function registrarGestion() {
 
     if ($("#tblCuotas").is(":visible")) {
         var objCuentaBE = new Object();
-        objCuentaBE.CUE_CODIGO = $("#contenido_txtCodigoCuenta").val();
+        objCuentaBE.CUE_CODIGO = $("#txtCodigoCuenta").val();
         $.ajax({
-            url: strServicio + "gestion.asmx/tieneConvenio",
-            data: '{"objCuentaBE": ' + JSON.stringify(objCuentaBE) + '}',
+            url: strServicio + "gestion.php?tieneConvenio=1",
+            data: '{"objCuentaBE": ' + JSON.stringify(objCuentaBE) + ', "CONSULTA_AJAX":"tieneConvenio"}',
             dataType: 'JSON',
             type: 'POST',
             contentType: "application/json; charset=utf-8",
@@ -500,7 +500,7 @@ function registrarGestion() {
                             size:"large",
                             placeholder:"maximo 50 caracteres",
                             maxlength:50,
-                            title:"ESTA CUENTA YA TIENE UN CONVENIO VIGENTE. SI DESEA DARLO DE BAJA, INGRESE EL MOTIVO DE MODIFICACIÓN:", 
+                            title:"ESTA CUENTA YA TIENE UN CONVENIO VIGENTE. SI DESEA DARLO DE BAJA, INGRESE EL MOTIVO DE MODIFICACIÓN:",
                             callback:function (r) {
                             if (r != null && $.trim(r).length > 0 ) {
                                 objGestion.FLG_ELIMINAR_CRONOGRAMA = true;
@@ -536,18 +536,18 @@ function iniciarRegistroGestion(objGestion, flgConvenio) {
         });
         objGestion.lstCronogramaBE = lstCronograma;
     }
-    
+
     objGestion.ObjTipoResultado = new Object();
     objGestion.ObjTipoResultado.TIR_CODIGO = $("#sltRespuesta").val().split('-')[0];
     if ($("#sltSolucion").is(":visible")) { objGestion.ObjTipoResultado.SOL_CODIGO = $("#sltSolucion").val().split('-')[0]; }
     objGestion.ObjTelefono = new Object();
     objGestion.ObjTelefono.TEL_CODIGO = $("#sltTelefono").val();
     objGestion.GES_OBSERVACIONES = $("#txtObservacion").val();
-    objGestion.ObjCuenta.CUE_CODIGO = $("#contenido_txtCodigoCuenta").val();
+    objGestion.ObjCuenta.CUE_CODIGO = $("#txtCodigoCuenta").val();
     objGestion.ObjCartera = new Object();
-    objGestion.ObjCartera.CAR_CODIGO = $("#contenido_txtCodigoCartera").val();
+    objGestion.ObjCartera.CAR_CODIGO = $("#txtCodigoCartera").val();
     objGestion.ObjSubCartera = new Object();
-    objGestion.ObjSubCartera.SCA_CODIGO = $("#contenido_txtCodigoSubCartera").val();
+    objGestion.ObjSubCartera.SCA_CODIGO = $("#txtCodigoSubCartera").val();
     //objGestion.GES_HORA = $("#horaGestion").text();
     objGestion.ObjDireccion = new Object();
     objGestion.ObjDireccion.DIR_CODIGO = $("#sltDireccion").val();
@@ -567,9 +567,9 @@ function iniciarRegistroGestion(objGestion, flgConvenio) {
     objGestion.REC_AGENCIA = $("#txtReciboAgencia").val();
     objGestion.REC_MONTO = ($("#txtReciboMonto").val() == "" ? "0" : $("#txtReciboMonto").val());
     objGestion.REC_FECHA = $("#txtReciboFecha").val();
-    console.log(objGestion);
+  //  console.log(objGestion);
 
-    var rol = $("#contenido_txtCodigoRol").val();
+  //  var rol = $("#txtCodigoRol").val();
 
     /*if ($("#tblCuotas").is(":visible") && (rol != 4 && rol != 5)) {
         var lstCronograma = new Array();
@@ -585,23 +585,26 @@ function iniciarRegistroGestion(objGestion, flgConvenio) {
     }*/
 
     $.ajax({
-        url: strServicio + "gestion.asmx/registrarGestion",
-        data: '{"objGestion": ' + JSON.stringify(objGestion) + '}',
+        url: strServicio + "gestion.php?registrarGestion=1",
+        data: '{"objGestion": ' + JSON.stringify(objGestion) + ',"CONSULTA_AJAX":"registrarGestion"}',
         dataType: 'JSON',
         type: 'POST',
         contentType: "application/json; charset=utf-8",
         async: false,
         success: function (jsondata) {
-            console.log(jsondata.d);
+          //  console.log(jsondata.d);
             if (jsondata != null) {
                 if (jsondata.d > 0) {
                     //tarea.GES_CODIGO = jsondata.d;
                     //$("#txtCodigoGestion").val(jsondata.d);
                     guardarTarea(jsondata.d);
+                    bootbox.alert("REGISTRO DE GESTIÓN REALIZADO CORRECTAMENTE", function(){
+                                //  console.log('This was logged in the callback!');
+                                  parent.$.fancybox.close();
+                                });
                     parent.cargarGestiones();
-                    bootbox.alert("REGISTRO DE GESTIÓN REALIZADO CORRECTAMENTE");
                     console.log("mayor q cero");
-                    parent.$.fancybox.close();
+                    //parent.$.fancybox.close();
                 } else {
                 console.log("negativo");
                 bootbox.alert("NO TIENE LOS PERMISOS NECESARIOS PARA REGISTRAR ESTA GESTION");
@@ -621,12 +624,12 @@ function guardarTarea(gestion_codigo) {
     tarea.REC_HORA = $("#txtHoraRecordatorio").val();
     tarea.REC_OBSERVACIONES = $("#txtObservacionRecordatorio").val();
     tarea.TIR_CODIGO = $("#sltRespuesta").val().split("-")[0];
-    tarea.CLI_CODIGO = $("#contenido_txtCodigoCliente").val();
-    //console.log(tarea);
+    tarea.CLI_CODIGO = $("#txtCodigoCliente").val();
+    console.log(tarea);
     if (tarea.GES_CODIGO != "0" && tarea.REC_OBSERVACIONES != null && tarea.REC_OBSERVACIONES.length > 0) {
         $.ajax({
-            url: strServicio+"gestion.asmx/registrarTarea",
-            data: '{"tarea":' + JSON.stringify(tarea) + '}',
+            url: strServicio + "gestion.php?registrarTarea=1",
+            data: '{"tarea":' + JSON.stringify(tarea) + ', "CONSULTA_AJAX":"registrarTarea"}',
             dataType: 'JSON',
             type: 'POST',
             contentType: "application/json; charset=utf-8",

@@ -18,7 +18,7 @@
         $("#sltProveedor").val("0");
         $("#sltCartera").val("0");
         $("#sltSubCartera").val("0");
-        $("#txtUbigeo").val(""); 
+        $("#txtUbigeo").val("");
         $("#sltUsuario").val("0");
         $("#txtNroCuenta").val("");
         $("#txtDni").val("");
@@ -27,7 +27,7 @@
         $("#txtHasta").val("");
         $("#sltFiltro").val("P");
         $(".btn-default").removeAttr("active");
-        buscar();
+        //buscar();
     });
 
     $("#btn_buscar_telefono").click(function () {
@@ -37,7 +37,7 @@
             height: 450,
             scrolling: 'no',
             modal: false,
-            href: "buscar-telefono.aspx"
+            href: "buscar-telefono.php"
         });
     });
 
@@ -106,9 +106,9 @@ function buscar() {
             "sLengthMenu": "Mostrar _MENU_ cuentas",
             "sZeroRecords": "No se encontraron resultados",
             "sEmptyTable": "Ningún dato disponible en esta tabla",
-            //"sInfo": "Mostrando cuentas del _START_ al _END_ de un total de _TOTAL_ cuentas",
-            "sInfo": "Total: _TOTAL_ cuentas",
-            "sInfoEmpty": "Mostrando cuentas del 0 al 0 de un total de 0 cuentas",
+            "sInfo": "Mostrando cuentas del _START_ al _END_ de un total de _TOTAL_ cuentas",
+            //"sInfo": "Total: _TOTAL_ cuentas",
+            "sInfoEmpty": "Mostrando 0 cuentas",
             "sInfoFiltered": "(filtrado de un total de _MAX_ cuentas)",
             "sInfoPostFix": "",
             "sSearch": "Buscar:",
@@ -134,9 +134,10 @@ function buscar() {
         "bProcessing": true,
         "bServerSide": true,
         "columnDefs": [{ orderable: false }], //, targets: [1,2] }],
-        "sAjaxSource": strServicio + "cartera.asmx/cargarBandejaSupervisor",
+        "sAjaxSource": strServicio + "cartera.php",
         "fnServerData": function (sSource, aoData, fnCallback) {
             aoData.push({ "name": "NRO_CUENTA", "value": $("#txtNroCuenta").val() });
+            aoData.push({ "name": "CONSULTA_AJAX", "value": "BANDEJA_SUPERVISOR" });
             aoData.push({ "name": "PERIODO", "value": $("#sltPeriodo").val() });
             aoData.push({ "name": "DNI", "value": $("#txtDni").val() });
             aoData.push({ "name": "CLIENTE", "value": $("#txtCliente").val() });
@@ -170,7 +171,7 @@ function buscar() {
 
 function abrir_gestion_cuenta(cuenta,pago,compromiso,estado) {
     //target='_blank' href='gestionar-cuenta.aspx?cuenta=" + row["CUE_NROCUENTA"] + "'
-    var url = "gestionar-cuenta.aspx?cuenta=" + cuenta;
+    var url = "gestionar-cuenta.php?cuenta=" + cuenta;
 
     if (estado == "C") {
         //bootbox.alert("PAGO CANCELACION/AJUSTE");
@@ -198,11 +199,11 @@ function abrir_gestion_cuenta(cuenta,pago,compromiso,estado) {
     } else {
         window.open(url, "GESTIONAR CUENTA");
     }
-    
+
 }
 
 function historial(cuenta) {
-    var url = "historial.aspx?cuenta="+cuenta;
+    var url = "historial.php?cuenta="+cuenta;
     $.fancybox({
         type: "iframe",
         width: 550,
@@ -223,14 +224,14 @@ function iniciarDatos() {
                 "<option value='G'>GESTIONADOS</option>" +
                 "<option value='N' "+ (rol == "4" || rol == "5" ? "selected":"")+">NO GESTIONADOS</option>" +
                 (rol != "4" && rol != "5" ? "<option value='T'>TODOS</option>" : "") +
-                "<option value='R'>RETIRADOS</option>" + 
+                "<option value='R'>RETIRADOS</option>" +
                 (rol != "4" && rol != "5" ? "<option value='C'>CANCELADOS</option>" : "");
     $("#sltFiltro").append(html_text);
 }
 
 function cargarUsuarios() {
     $.ajax({
-        url: strServicio + "general.asmx/listarUsuariosAsigCall",
+        url: strServicio + "listarUsuariosAsigCall.php",
         dataType: 'JSON',
         type: 'POST',
         contentType: "application/json; charset=utf-8",
@@ -256,7 +257,7 @@ function borrarRetirados(select_box,obj) {
 
 function cargarProveedor() {
     $.ajax({
-        url: strServicio + "general.asmx/cargarProveedor",
+        url: strServicio + "cargarProveedor.php",
         dataType: 'JSON',
         type: 'POST',
         contentType: "application/json; charset=utf-8",
@@ -273,7 +274,7 @@ function cargarProveedor() {
 
 function cargarCarteras() {
     $.ajax({
-        url: strServicio + "general.asmx/cargarCarteras",
+        url: strServicio + "cargarCarteras.php",
         data: '{"PRV_CODIGO":"' + $("#sltProveedor").val() + '"}',
         dataType: 'JSON',
         type: 'POST',
@@ -292,7 +293,7 @@ function cargarCarteras() {
 
 function cargarSubCarteras() {
     $.ajax({
-        url: strServicio + "general.asmx/cargarSubCarteras",
+        url: strServicio + "cargarSubCarteras.php",
         data: '{"CAR_CODIGO":"' + $("#sltCartera").val() + '"}',
         dataType: 'JSON',
         type: 'POST',
@@ -307,7 +308,7 @@ function cargarSubCarteras() {
             //console.log(jsondata.d);
         }
     });
-} 
+}
 
 $("#sltDepartamento").change(function () {
     listarProvincia($(this).val());

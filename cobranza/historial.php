@@ -169,7 +169,7 @@ $script =<<<Final
 
     function iniciarDatos() {
         $.ajax({
-            url: strServicio +  "gestion.php",
+            url: strServicio +  "gestion.php?obtenerDatosCuenta=1",
             data: '{"cuenta":"' + $("#contenido_txtCuenta").val() + '", "CONSULTA_AJAX":"obtenerDatosCuenta"}',
             dataType: 'JSON',
             type: 'POST',
@@ -206,7 +206,7 @@ $script =<<<Final
 
     function cargarPagos(codigo) {
         $.ajax({
-            url: strServicio + "gestion.php",
+            url: strServicio + "gestion.php?obtenerPagos=1",
             data: '{"codigo":' + codigo + ', "CONSULTA_AJAX":"obtenerPagos"}',
             dataType: 'JSON',
             type: 'POST',

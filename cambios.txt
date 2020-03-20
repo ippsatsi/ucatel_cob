@@ -31,3 +31,8 @@ ORDER BY 2 ASC
 END;
 ///////////////////////////////////////////
 
+
+**********TODO
+crear js script q valide sesiones y rediriga a pantalla principal cuando la sesion haya caducado
+probar agregando telefonos nuevos y ver como aparecen los SG
+

@@ -177,9 +177,10 @@ function buscar() {
         "bProcessing": true,
         "bServerSide": true,
         "columnDefs": [{ orderable: false }], //, targets: [1,2] }],
-        "sAjaxSource": strServicio+"cartera.asmx/cargarGridClientes",
+        "sAjaxSource": strServicio + "cartera.php",
         "fnServerData": function (sSource, aoData, fnCallback) {
             aoData.push({ "name": "NRO_CUENTA", "value": $("#txtNroCuenta").val() });
+            aoData.push({ "name": "CONSULTA_AJAX", "value": "BANDEJA_PRINCIPAL" });
             aoData.push({ "name": "DNI", "value": $("#txtDni").val() });
             aoData.push({ "name": "CLIENTE", "value": $("#txtCliente").val() });
             aoData.push({ "name": "PROVEEDOR", "value": $("#sltProveedor").val() });
@@ -234,7 +235,7 @@ function abrir_gestion_cuenta(cuenta,pago,compromiso,estado) {
     } else {
         window.open(url, "GESTIONAR CUENTA");
     }
-    
+
 }
 
 function historial(cuenta) {
@@ -250,11 +251,11 @@ function historial(cuenta) {
 }
 
 function iniciarDatos() {
-    cargarProveedor();
-    listarDepartamento();
-    listarTipoResultado();
+  //  cargarProveedor();
+  //  listarDepartamento();
+  //  listarTipoResultado();
 
-    var rol = $("#contenido_txt_rol_codigo").val();
+    var rol = $("#txt_rol_codigo").val();
     var html_text = "<option value='P'>ASIGNADOS</option>" +
                 "<option value='G'>GESTIONADOS</option>" +
                 "<option value='N' "+ (rol == "4" || rol == "5" ? "selected":"")+">NO GESTIONADOS</option>" +
@@ -265,7 +266,7 @@ function iniciarDatos() {
 
 function cargarProveedor() {
     $.ajax({
-        url: strServicio+"general.asmx/cargarProveedor",
+        url: strServicio + "cargarProveedor.php",
         dataType: 'JSON',
         type: 'POST',
         contentType: "application/json; charset=utf-8",
@@ -281,8 +282,8 @@ function cargarProveedor() {
 
 function cargarCarteras() {
     $.ajax({
-        url: strServicio+"general.asmx/cargarCarteras",
-        data: '{"PRV_CODIGO":"' + $("#sltProveedor").val() + '"}',
+      url: strServicio + "cargarCarteras.php",
+      data: '{"PRV_CODIGO":"' + $("#sltProveedor").val() + '"}',
         dataType: 'JSON',
         type: 'POST',
         contentType: "application/json; charset=utf-8",
@@ -299,7 +300,7 @@ function cargarCarteras() {
 
 function cargarSubCarteras() {
     $.ajax({
-        url: strServicio + "general.asmx/cargarSubCarteras",
+        url: strServicio + "cargarSubCarteras.php",
         data: '{"CAR_CODIGO":"' + $("#sltCartera").val() + '"}',
         dataType: 'JSON',
         type: 'POST',
@@ -342,7 +343,7 @@ function listarDepartamento() {
 function listarTipoResultado() {
     $.ajax({
         url: strServicio + "general.asmx/listarRespuestaBandeja",
-        data: '{"codigo":"' + $("#contenido_txt_usu_codigo").val() + '"}',
+        data: '{"codigo":"' + $("#txt_usu_codigo").val() + '"}',
         dataType: 'JSON',
         type: 'POST',
         async: false,
