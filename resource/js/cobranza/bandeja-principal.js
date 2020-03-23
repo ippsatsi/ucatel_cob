@@ -213,7 +213,7 @@ function buscar() {
 
 function abrir_gestion_cuenta(cuenta,pago,compromiso,estado) {
     //target='_blank' href='gestionar-cuenta.aspx?cuenta=" + row["CUE_NROCUENTA"] + "'
-    var url = "gestionar-cuenta.aspx?cuenta=" + cuenta;
+    var url = "gestionar-cuenta.php?cuenta=" + cuenta;
 
     if (estado == "C") {
         bootbox.alert("PAGO CANCELACION/AJUSTE");
@@ -239,7 +239,7 @@ function abrir_gestion_cuenta(cuenta,pago,compromiso,estado) {
 }
 
 function historial(cuenta) {
-    var url = "historial.aspx?cuenta="+cuenta;
+    var url = "historial.php?cuenta="+cuenta;
     $.fancybox({
         type: "iframe",
         width: 550,

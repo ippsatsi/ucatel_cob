@@ -228,6 +228,21 @@ class Bandejas extends DB
         $result['d'] = $array_result;
         return $result;
     }//endfunction
+
+    public function getBandejaCompromisoSemanal($parametros)
+    {
+        $query = "EXEC COBRANZA.SP_COMPROMISO_SEMANAL :usu_codigo, :dni, :desde, :hasta, :tipo";//"'', '', '', 0, '14/02/2020', '14/02/2020', 1";
+
+        $bandeja_convenios = $this->run_query_wParam($query, $parametros);
+        $result = array("d"=>[]);
+        $array_result = array();
+        while ( $fila = $bandeja_convenios->fetch(PDO::FETCH_ASSOC) ) :
+            array_push($array_result, $fila);
+        endwhile;
+
+        $result['d'] = $array_result;
+        return $result;
+    }//endfunction
 }//endclass
 
 

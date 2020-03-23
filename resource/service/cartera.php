@@ -148,6 +148,28 @@ if ( isset($_GET['CONSULTA_AJAX']) ) :
         endif;
     endif;
 
+        //BANDEJA CONVENIOS
+        if ( $_GET['CONSULTA_AJAX'] == 'obtenerCompromisoSemanal') :
+            $data = json_decode(file_get_contents('php://input'), true);
+    
+            if (  is_array($data)) :
+                $band_compromiso_semanal = new Bandejas();
+                $parametros = array(
+                    ":dni" => $data['dni'],
+                    ":desde" => $data['fecha_desde'],
+                    ":hasta" => $data['fecha_hasta'],
+                    "usu_codigo" => $user->getUserId(),
+                    "tipo" => $data['tipo']
+                );
+                
+                $resultado = $band_compromiso_semanal->getBandejaCompromisoSemanal($parametros);
+                header('Content-Type: application/json; charset=UTF-8');
+                //var_dump($resultado);
+                //print_r($resultado);
+                echo json_encode($resultado);
+            endif;
+        endif;
+
 endif;
 
 exit;
