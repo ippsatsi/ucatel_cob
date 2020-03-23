@@ -148,7 +148,7 @@ if ( isset($_GET['CONSULTA_AJAX']) ) :
         endif;
     endif;
 
-        //BANDEJA CONVENIOS
+        //BANDEJA Compromiso Semanal
         if ( $_GET['CONSULTA_AJAX'] == 'obtenerCompromisoSemanal') :
             $data = json_decode(file_get_contents('php://input'), true);
     
@@ -169,6 +169,23 @@ if ( isset($_GET['CONSULTA_AJAX']) ) :
                 echo json_encode($resultado);
             endif;
         endif;
+
+        //BANDEJA Recordatorio
+        if ( $_GET['CONSULTA_AJAX'] == 'obtenerRecordatorios') :
+
+                $band_recordatorios = new Bandejas();
+                $parametros = array(
+                    "usu_codigo" => $user->getUserId()
+                );
+                
+                $resultado = $band_recordatorios->getBandejaRecordatorios($parametros);
+                header('Content-Type: application/json; charset=UTF-8');
+                //var_dump($resultado);
+                //print_r($resultado);
+                echo json_encode($resultado);
+
+        endif;
+        
 
 endif;
 

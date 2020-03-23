@@ -243,6 +243,21 @@ class Bandejas extends DB
         $result['d'] = $array_result;
         return $result;
     }//endfunction
+
+    public function getBandejaRecordatorios($parametros)
+    {
+        $query = "EXEC COBRANZA.SP_OBTENER_RECORDATORIO :usu_codigo";//"'', '', '', 0, '14/02/2020', '14/02/2020', 1";
+
+        $bandeja_recordatorios = $this->run_query_wParam($query, $parametros);
+        $result = array("d"=>[]);
+        $array_result = array();
+        while ( $fila = $bandeja_recordatorios->fetch(PDO::FETCH_ASSOC) ) :
+            array_push($array_result, $fila);
+        endwhile;
+
+        $result['d'] = $array_result;
+        return $result;
+    }//endfunction
 }//endclass
 
 
