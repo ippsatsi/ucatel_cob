@@ -1,5 +1,6 @@
 <?php
 
+require "datos_conexion_local.php";
 /**
  *
  */
@@ -13,10 +14,14 @@ class DB
 //PDO::SQLSRV_CURSOR_DYNAMIC
     public function __construct()
     {
-        $this->server = "192.168.1.248";
+        GLOBAL $ip_server_local;
+        GLOBAL $sql_user_local;
+        GLOBAL $sql_pass_local;
+        
+        $this->server = $ip_server_local;
         $this->database = "ucatel_db_gcc";
-        $this->user = "sa";
-        $this->password = "Tg3st10n";
+        $this->user = $sql_user_local;
+        $this->password = $sql_pass_local;
         $this->array_parameter_select_count = array(
               PDO::ATTR_CURSOR                      => PDO::CURSOR_SCROLL,
               PDO::SQLSRV_ATTR_CURSOR_SCROLL_TYPE   => PDO::SQLSRV_CURSOR_BUFFERED);

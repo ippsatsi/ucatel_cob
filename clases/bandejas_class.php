@@ -75,7 +75,7 @@ class Bandejas extends DB
     {
         $query = "EXEC COBRANZA.SP_CARGAR_BANDEJA_SUPERVISOR :rol, :usuario, :cuenta, :periodo, :dni, :nombres, :prv,:car,:sca,:ubi_codigo,:agente,:filtro,:desde,:hasta,:fcd,:fci,:fnc,:fsg";
         //"EXEC COBRANZA.SP_CARGAR_BANDEJA_SUPERVISOR 3, 3052, '', 9, '', '', 2,2,4,'',0,'T','','',0,0,0,0
-        $bandeja_super = $this->run_query_wParam($query, $array_params);
+        $bandeja_super = $this->run_big_query_wParam($query, $array_params);
         $result = array("d"=>[]);
         $aaData = array();
         $count_filas = $start;

@@ -113,7 +113,7 @@ class Usuario extends DB
         if ( $obtener_menu->rowCount() > 0 ) :
              while ( $menu = $obtener_menu->fetch( PDO::FETCH_ASSOC ) ) {
                 if ( $menu["PAG_ES_PADRE"] == 1 ) :
-                    $html .= $primer_padre?" ":"    </li>\n";
+                    // $html .= $primer_padre?" ":"    </li>\n";
                     $html .= "    <li class='heading'>\n";
                     $html .= "      <h3 class='uppercase'>${menu["PAG_TITLE"]}</h3>\n";
                     //$html .= "    </li>";
@@ -124,7 +124,7 @@ class Usuario extends DB
                     $html .= "          <i class='${menu["PAG_ICON"]}'></i>\n";
                     $html .= "          <span class='title'>${menu["PAG_TITLE"]}</span>\n";
                     $html .= "        </a>\n";
-                    $html .= "      </li>\n";
+                    $html .= "      </li><!-- li -->\n";
                     $primer_padre = false;
                 endif;/*
                 echo "<pre>";
