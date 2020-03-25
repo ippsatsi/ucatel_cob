@@ -11,7 +11,7 @@ class DB
     private $user;
     private $password;
     private $array_parameter_select_count;
-//PDO::SQLSRV_CURSOR_DYNAMIC
+
     public function __construct()
     {
         GLOBAL $ip_server_local;
@@ -38,6 +38,11 @@ class DB
 
             $conn = new PDO( "sqlsrv:server=$this->server ; Database=$this->database", $this->user, $this->password);
             $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+            //parametros para que no fuerce la conversion de tipos int a string
+            $conn->setAttribute(PDO::SQLSRV_ATTR_FETCHES_NUMERIC_TYPE, true);
+            $conn->setAttribute(PDO::ATTR_STRINGIFY_FETCHES, false);
+//             $conn->setAttribute(constant('PDO::SQLSRV_ATTR_DIRECT_QUERY'), true);
+// $conn->query("SET NOCOUNT ON"); 
             return $conn;
         } catch (PDOException $e) {
             die( print_r( $e->getMessage() ) );
@@ -49,6 +54,14 @@ class DB
     {
         $run_query = $this->connect()->prepare($query, $this->array_parameter_select_count);
         $run_query->execute($parameters);
+
+        return $run_query;
+    }
+
+    public function run_query_sp($query)
+    {
+        $run_query = $this->connect()->prepare($query, $this->array_parameter_select_count);
+        $run_query->execute();
 
         return $run_query;
     }

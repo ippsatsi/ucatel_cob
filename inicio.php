@@ -34,6 +34,25 @@ else:
     $user->setUrlMaster($ruta_web);
 endif;
 
+if ( $user->getUserRol() < 4 ) :
+    $avanceUsuario = <<<Final
+    <div class="row" id="div_avance_usuario">
+    <div class="col-md-12">
+        <div class="portlet box blue">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-bar-chart"></i> Avance por Usuario</div>
+                <div class="tools"> </div>
+            </div>
+            <div class="portlet-body" id="div_usuarios">
+
+            </div>
+        </div>
+    </div>
+</div>
+Final;
+
+endif;
 // ﻿<!-- <%@ Page Title="" Language="C#" MasterPageFile="resource/masterPage/Template.Master" AutoEventWireup="true" CodeBehind="inicio.aspx.cs" Inherits="WEB.inicio" %> -->
 // <!-- <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server"> -->
   $head = "";
@@ -48,31 +67,25 @@ endif;
 // <!-- </asp:Content>--%> -->
 require_once "clases/indicadores_class.php";
 $indicadores = new Indicadores;
-$indicador_semanal = $indicadores->indicadorSemanal($user->getUserId());
+// [{&quot;name&quot;:&quot;CONTACTO DIRECTO&quot;,&quot;data&quot;:[0,2,0,0,0,0,0]},{&quot;name&quot;:&quot;NO CONTACTO&quot;,&quot;data&quot;:[0,1,0,0,0,0,0]}]
+$indicador_semanal = htmlspecialchars($indicadores->indicadorSemanal($user->getUserId()));
+//[{"name":"CONTACTO DIRECTO: 2","y":66.6666666666666666},{"name":"NO CONTACTO: 1","y":33.3333333333333333}]
+$indicador_semanal_porcentaje = htmlspecialchars($indicadores->indicadorSemanalPorcentaje($user->getUserId()));
+$resultado_avance_usuario = $indicadores->indicadorUsuarioDiario();
+//{&quot;categories&quot; : [&quot;CALL: cretes&quot;,&quot;CALL: mgarbay&quot;]}
+$categorias = htmlspecialchars(json_encode(array("categories" => $resultado_avance_usuario['categorias'])));
+//[{&quot;name&quot;:&quot;CONTACTO DIRECTO&quot;,&quot;data&quot;:[1,1]},{&quot;name&quot;:&quot;CONTACTO INDIRECTO&quot;,&quot;data&quot;:[0,0]},{&quot;name&quot;:&quot;NO CONTACTO&quot;,&quot;data&quot;:[0,1]},{&quot;name&quot;:&quot;COMPROMISOS&quot;,&quot;data&quot;:[0,0]}]
+$indicador_usuario_diario = htmlspecialchars(json_encode($resultado_avance_usuario['datasets']));
 $contenido = <<<Final
+    <input type="hidden" id="json_indicador_semanal" value="$indicador_semanal" />
+    <input type="hidden" id="json_indicador_semanal_porc" value="$indicador_semanal_porcentaje" />
+    <input type="hidden" id="json_categorias" value="$categorias" />
+    <input type="hidden" id="json_series" value="$indicador_usuario_diario" />
 
-<asp:Content ID="Content5" ContentPlaceHolderID="contenido" runat="server">
-    <asp:HiddenField ID="json_indicador_semanal" value="$indicador_semanal"/>
-    <asp:HiddenField ID="json_indicador_semanal_porc" runat="server"/>
-    <asp:HiddenField ID="json_categorias" runat="server"/>
-    <asp:HiddenField ID="json_series" runat="server"/>
     <!-- <%--<h1 id="txtBienvenido"></h1> -->
     <!-- <h4 id="txtRolDescripcion"></h4>--%> -->
     <h1>BIENVENIDO AL SISTEMA</h1>
-    <div class="row" id="div_avance_usuario">
-        <div class="col-md-12">
-            <div class="portlet box blue">
-                <div class="portlet-title">
-                    <div class="caption">
-                        <i class="fa fa-bar-chart"></i> Avance por Usuario</div>
-                    <div class="tools"> </div>
-                </div>
-                <div class="portlet-body" id="div_usuarios">
-
-                </div>
-            </div>
-        </div>
-    </div>
+    $avanceUsuario
     <div class="row">
         <div class="col-md-8">
             <div class="portlet box blue">
@@ -236,10 +249,12 @@ $script = <<<Final
         Highcharts.setOptions(Highcharts.theme);
 
         $(function () {
-            var json_data = JSON.parse($("#contenido_json_indicador_semanal").val());
-            var json_data_porc = JSON.parse($("#contenido_json_indicador_semanal_porc").val());
-            var json_categorias_usua = JSON.parse($("#contenido_json_categorias").val());
-            var json_series_usua = JSON.parse($("#contenido_json_series").val());
+            console.log($("#json_indicador_semanal_porc").val());
+            console.log($("#json_series").val());
+            var json_data = JSON.parse($("#json_indicador_semanal").val());
+            var json_data_porc = JSON.parse($("#json_indicador_semanal_porc").val());
+            var json_categorias_usua = JSON.parse($("#json_categorias").val());
+            var json_series_usua = JSON.parse($("#json_series").val());
             $('#div_estadistica').highcharts({
                 title: {
                     text: 'Cantidad de Gestiones Diarias',

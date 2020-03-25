@@ -95,7 +95,7 @@
     obtener_indicador_diario_mensual();
     function obtener_indicador_diario_mensual() {
         $.ajax({
-            url: strServicio+"indicador.asmx/obtenerIndicadorDiarioMensual",
+            url: strServicio + "indicadores.php?CONSULTA_AJAX=obtenerIndicadorDiarioMensual",
             dataType: 'JSON',
             type: 'POST',
             contentType: "application/json; charset=utf-8",

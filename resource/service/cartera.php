@@ -183,10 +183,22 @@ if ( isset($_GET['CONSULTA_AJAX']) ) :
                 //var_dump($resultado);
                 //print_r($resultado);
                 echo json_encode($resultado);
-
-        endif;
+       endif;
         
+        //BANDEJA ReporteDiario
+        if ( $_GET['CONSULTA_AJAX'] == 'obtenerReporteDiarioUsuario') :
 
+            $band_reporteDiarioUsu = new Bandejas();
+            $parametros = array(
+                "usu_codigo" => $user->getUserId()
+            );
+            
+            $resultado = $band_reporteDiarioUsu->getBandejaReporteDiarioUsuario($parametros);
+            header('Content-Type: application/json; charset=UTF-8');
+            //var_dump($resultado);
+            //print_r($resultado);
+            echo json_encode($resultado);
+   endif;
 endif;
 
 exit;
