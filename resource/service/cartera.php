@@ -148,57 +148,72 @@ if ( isset($_GET['CONSULTA_AJAX']) ) :
         endif;
     endif;
 
-        //BANDEJA Compromiso Semanal
-        if ( $_GET['CONSULTA_AJAX'] == 'obtenerCompromisoSemanal') :
-            $data = json_decode(file_get_contents('php://input'), true);
-    
-            if (  is_array($data)) :
-                $band_compromiso_semanal = new Bandejas();
-                $parametros = array(
-                    ":dni" => $data['dni'],
-                    ":desde" => $data['fecha_desde'],
-                    ":hasta" => $data['fecha_hasta'],
-                    "usu_codigo" => $user->getUserId(),
-                    "tipo" => $data['tipo']
-                );
-                
-                $resultado = $band_compromiso_semanal->getBandejaCompromisoSemanal($parametros);
-                header('Content-Type: application/json; charset=UTF-8');
-                //var_dump($resultado);
-                //print_r($resultado);
-                echo json_encode($resultado);
-            endif;
-        endif;
+    //BANDEJA Compromiso Semanal
+    if ( $_GET['CONSULTA_AJAX'] == 'obtenerCompromisoSemanal') :
+        $data = json_decode(file_get_contents('php://input'), true);
 
-        //BANDEJA Recordatorio
-        if ( $_GET['CONSULTA_AJAX'] == 'obtenerRecordatorios') :
-
-                $band_recordatorios = new Bandejas();
-                $parametros = array(
-                    "usu_codigo" => $user->getUserId()
-                );
-                
-                $resultado = $band_recordatorios->getBandejaRecordatorios($parametros);
-                header('Content-Type: application/json; charset=UTF-8');
-                //var_dump($resultado);
-                //print_r($resultado);
-                echo json_encode($resultado);
-       endif;
-        
-        //BANDEJA ReporteDiario
-        if ( $_GET['CONSULTA_AJAX'] == 'obtenerReporteDiarioUsuario') :
-
-            $band_reporteDiarioUsu = new Bandejas();
+        if (  is_array($data)) :
+            $band_compromiso_semanal = new Bandejas();
             $parametros = array(
-                "usu_codigo" => $user->getUserId()
+                ":dni" => $data['dni'],
+                ":desde" => $data['fecha_desde'],
+                ":hasta" => $data['fecha_hasta'],
+                "usu_codigo" => $user->getUserId(),
+                "tipo" => $data['tipo']
             );
             
-            $resultado = $band_reporteDiarioUsu->getBandejaReporteDiarioUsuario($parametros);
+            $resultado = $band_compromiso_semanal->getBandejaCompromisoSemanal($parametros);
             header('Content-Type: application/json; charset=UTF-8');
             //var_dump($resultado);
             //print_r($resultado);
             echo json_encode($resultado);
-   endif;
+        endif;
+    endif;
+
+    //BANDEJA Recordatorio
+    if ( $_GET['CONSULTA_AJAX'] == 'obtenerRecordatorios') :
+
+            $band_recordatorios = new Bandejas();
+            $parametros = array(
+                "usu_codigo" => $user->getUserId()
+            );
+            
+            $resultado = $band_recordatorios->getBandejaRecordatorios($parametros);
+            header('Content-Type: application/json; charset=UTF-8');
+            //var_dump($resultado);
+            //print_r($resultado);
+            echo json_encode($resultado);
+    endif;
+        
+    //BANDEJA ReporteDiario
+    if ( $_GET['CONSULTA_AJAX'] == 'obtenerReporteDiarioUsuario') :
+
+        $band_reporteDiarioUsu = new Bandejas();
+        $parametros = array(
+            "usu_codigo" => $user->getUserId()
+        );
+        
+        $resultado = $band_reporteDiarioUsu->getBandejaReporteDiarioUsuario($parametros);
+        header('Content-Type: application/json; charset=UTF-8');
+        //var_dump($resultado);
+        //print_r($resultado);
+        echo json_encode($resultado);
+    endif;
+
+        //Notificador
+        if ( $_GET['CONSULTA_AJAX'] == 'notificador') :
+
+            $notificador = new Bandejas();
+            $parametros = array(
+                "usu_codigo" => $user->getUserId()
+            );
+            
+            $resultado = $notificador->getNotificador($parametros);
+            header('Content-Type: application/json; charset=UTF-8');
+            //var_dump($resultado);
+            //print_r($resultado);
+            echo json_encode($resultado);
+        endif;
 endif;
 
 exit;

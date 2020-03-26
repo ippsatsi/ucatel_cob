@@ -124,7 +124,7 @@ $(document).ready(function () {
 
 function obtenerNotificacion() {
     $.ajax({
-        url: strServicio + "notificador.php",
+        url: strServicio + "cartera.php?CONSULTA_AJAX=notificador",
         dataType: "json",
         type: "POST",
         contentType: "application/json; charset=utf-8",
@@ -134,7 +134,7 @@ function obtenerNotificacion() {
                 if (obj.TIPO == 1) {
                     $("#txt_cant_recordatorio").text(obj.CANTIDAD);
                     $("#txt_cant_recordatorios").text(obj.CANTIDAD + " recordatorios");
-                    var html_text = "<li><a href='gestionar-cuenta.aspx?cuenta=" + obj.NRO_CUENTA + "'>" +
+                    var html_text = "<li><a href=" + strPath +"cobranza/gestionar-cuenta.php?cuenta=" + obj.NRO_CUENTA + ">" +
                             "<span class='time'>" + obj.FECHA + "<br/>" + obj.HORA + "</span>" +
                             "<span class='details'>" +
                                 "<span class='label label-sm label-icon label-success'>" +
@@ -146,7 +146,7 @@ function obtenerNotificacion() {
                     $("#txt_cant_compromiso").text(obj.CANTIDAD);
                     $("#txt_cant_compromisos").text(obj.CANTIDAD + " compromisos");
                     var html_text = "<li>" +
-                            "<a href='gestionar-cuenta.aspx?cuenta=" + obj.NRO_CUENTA + "'>" +
+                            "<a href=" + strPath +"cobranza/gestionar-cuenta.php?cuenta=" + obj.NRO_CUENTA + ">" +
                                 "<span class='task'>" +
                                     "<span class='desc'>" + obj.NRO_CUENTA + "</span>" +
                                     "<span class='percent'>" + obj.FECHA + "</span>" +
@@ -162,7 +162,7 @@ function obtenerNotificacion() {
                     $("#txt_cant_convenio").text(obj.CANTIDAD);
                     $("#txt_cant_convenios").text(obj.CANTIDAD + " convenio");
                     var html_text="<li>" +
-                            "<a href='gestionar-cuenta.aspx?cuenta=" + obj.NRO_CUENTA + "'>" +
+                            "<a href=" + strPath +"cobranza/gestionar-cuenta.php?cuenta=" + obj.NRO_CUENTA + ">" +
                                 "<span class='task'>" +
                                     "<span class='desc'>" + obj.NRO_CUENTA + "</span>" +
                                     "<span class='percent'>" + obj.FECHA + "</span>" +

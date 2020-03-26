@@ -41,8 +41,6 @@ class DB
             //parametros para que no fuerce la conversion de tipos int a string
             $conn->setAttribute(PDO::SQLSRV_ATTR_FETCHES_NUMERIC_TYPE, true);
             $conn->setAttribute(PDO::ATTR_STRINGIFY_FETCHES, false);
-//             $conn->setAttribute(constant('PDO::SQLSRV_ATTR_DIRECT_QUERY'), true);
-// $conn->query("SET NOCOUNT ON"); 
             return $conn;
         } catch (PDOException $e) {
             die( print_r( $e->getMessage() ) );

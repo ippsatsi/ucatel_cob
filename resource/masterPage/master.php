@@ -58,7 +58,7 @@
                                 <li class="external">
                                     <h3>
                                         <span class="bold" id="txt_cant_recordatorios">0 recordatorios</span></h3>
-                                    <a href="cobranza/recordatorio.aspx">Ver todo</a>
+                                    <a href="<?php echo $url_relativa; ?>cobranza/recordatorio.php">Ver todo</a>
                                 </li>
                                 <li>
                                     <ul id="lst_recordatorio" class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283">
@@ -77,7 +77,7 @@
                                 <li class="external">
                                     <h3>Tu tienes
                                         <span class="bold" id="txt_cant_compromisos">0 compromisos</span></h3>
-                                    <a href="cobranza/compromiso-semanal.aspx">Ver todo</a>
+                                    <a href="<?php echo $ruta_web; ?>cobranza/compromiso-semanal.php">Ver todo</a>
                                 </li>
                                 <li>
                                     <ul id="lst_compromiso" class="dropdown-menu-list scroller" style="height: 275px;" data-handle-color="#637283">
@@ -96,7 +96,7 @@
                                 <li class="external">
                                     <h3>Tu tienes
                                         <span class="bold" id="txt_cant_convenios">0 convenios</span></h3>
-                                    <a href="cobranza/bandeja-convenios.aspx">Ver todo</a>
+                                    <a href="<?php echo $ruta_web; ?>cobranza/bandeja-convenios.php">Ver todo</a>
                                 </li>
                                 <li>
                                     <ul id="lst_convenio" class="dropdown-menu-list scroller" style="height: 275px;" data-handle-color="#637283">
