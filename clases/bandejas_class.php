@@ -288,6 +288,21 @@ class Bandejas extends DB
         $result['d'] = $array_result;
         return $result;
     }//endfunction
+
+    public function getResumenCarteras()
+    {
+        $query = "EXEC COBRANZA.SP_RESUMEN_CUENTAS_ACTIVAS";//"'', '', '', 0, '14/02/2020', '14/02/2020', 1";
+
+        $resumenCarteras = $this->run_query($query);
+        $result = array("d"=>[]);
+        $array_result = array();
+        while ( $fila = $resumenCarteras->fetch(PDO::FETCH_ASSOC) ) :
+            array_push($array_result, $fila);
+        endwhile;
+
+        $result['d'] = $array_result;
+        return $result;
+    }//endfunction
 }//endclass
 
 

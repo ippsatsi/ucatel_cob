@@ -200,20 +200,31 @@ if ( isset($_GET['CONSULTA_AJAX']) ) :
         echo json_encode($resultado);
     endif;
 
-        //Notificador
-        if ( $_GET['CONSULTA_AJAX'] == 'notificador') :
+    //Notificador
+    if ( $_GET['CONSULTA_AJAX'] == 'notificador') :
 
-            $notificador = new Bandejas();
-            $parametros = array(
-                "usu_codigo" => $user->getUserId()
-            );
-            
-            $resultado = $notificador->getNotificador($parametros);
-            header('Content-Type: application/json; charset=UTF-8');
-            //var_dump($resultado);
-            //print_r($resultado);
-            echo json_encode($resultado);
-        endif;
+        $notificador = new Bandejas();
+        $parametros = array(
+            "usu_codigo" => $user->getUserId()
+        );
+        
+        $resultado = $notificador->getNotificador($parametros);
+        header('Content-Type: application/json; charset=UTF-8');
+        //var_dump($resultado);
+        //print_r($resultado);
+        echo json_encode($resultado);
+    endif;
+
+    //listar resumen cuentas CARGA CARTERAS/REGISTRO ARCHIVOS
+    if ( $_GET['CONSULTA_AJAX'] == 'listarResumenCuentas') :
+
+        $ResumenCarteras = new Bandejas();
+
+        $resultado = $ResumenCarteras->getResumenCarteras();
+        header('Content-Type: application/json; charset=UTF-8');
+
+        echo json_encode($resultado);
+    endif;
 endif;
 
 exit;
