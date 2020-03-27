@@ -185,6 +185,89 @@ if (  is_array($data) ) :
             // @REC_USUARIO INT
             $resultado = $cliente->setRegistrarTareaRecordatorio($array_param);
             break;
+        case 'registrarGestionProgresivo':
+            $cliente = new Cliente();
+            $array_obj = $data['objGestion'];
+            $array_param['CUE_CODIGO'] = $array_obj['ObjCuenta']['CUE_CODIGO'];
+            $array_param['TIR_CODIGO'] = $array_obj['ObjTipoResultado']['TIR_CODIGO'];
+            $array_param['SOL_CODIGO'] = isset($array_obj['ObjTipoResultado']['SOL_CODIGO']) ? $array_obj['ObjTipoResultado']['SOL_CODIGO'] : 0 ;
+            $array_param['TEL_CODIGO'] = $array_obj['ObjTelefono']['TEL_CODIGO'];
+            $array_param['GES_OBSERVACIONES'] = $array_obj['GES_OBSERVACIONES'];
+            $array_param['CAR_CODIGO'] = $array_obj['ObjCartera']['CAR_CODIGO'];
+            $array_param['SCA_CODIGO'] = $array_obj['ObjSubCartera']['SCA_CODIGO'];
+            $array_param['DIR_CODIGO'] = $array_obj['ObjDireccion']['DIR_CODIGO'];
+            $array_param['USU_CODIGO'] = $user->getUserId();
+            $array_param['TIG_CODIGO'] = $array_obj['ObjTipoGestion']['TIG_CODIGO'];
+            $array_param['GES_FECHA_INICIAL'] = $array_obj['GES_FECHA_INICIAL'];
+            $array_param['GES_IMPORTE_INICIAL'] = $array_obj['GES_IMPORTE_INICIAL'];
+            $array_param['GES_NRO_CUOTAS'] = $array_obj['GES_NRO_CUOTAS'];
+            $array_param['GES_IMPORTE_NEGOCIACION'] = $array_obj['GES_IMPORTE_NEGOCIACION'];
+            $array_param['GES_SALDO_NEGOCIACION'] = $array_obj['GES_SALDO_NEGOCIACION'];
+            $array_param['GES_VALOR_CUOTA'] = $array_obj['GES_VALOR_CUOTA'];
+            $array_param['REC_NUMERO'] = $array_obj['REC_NUMERO'];
+            $array_param['REC_AGENCIA'] = $array_obj['REC_AGENCIA'];
+            $array_param['REC_MONTO'] = $array_obj['REC_MONTO'];
+            $array_param['REC_FECHA'] = $array_obj['REC_FECHA'];
+            // :TIR_CODIGO,
+            // :SOL_CODIGO,
+            // 0,
+            // :TEL_CODIGO,
+            // :GES_OBSERVACIONES,
+            // :CUE_CODIGO,
+            // :CAR_CODIGO,
+            // :SCA_CODIGO,
+            // :DIR_CODIGO,
+            // 0,
+            // :USU_CODIGO,
+            // :TIG_CODIGO,
+            // :GES_FECHA_INICIAL,
+            // :GES_IMPORTE_INICIAL,
+            // 0,
+            // :GES_NRO_CUOTAS,
+            // :GES_IMPORTE_NEGOCIACION,
+            // :GES_SALDO_NEGOCIACION,
+            // :GES_VALOR_CUOTA,
+            // :REC_NUMERO,
+            // :REC_AGENCIA,
+            // :REC_MONTO,
+            // :REC_FECHA";
+            $resultado = $cliente->setRegistrarGestionProgresivo($array_param);
+            $ges_codigo = $resultado['d'];
+            //vemos si es un convenio la gestion a registrar
+            if ( $ges_codigo > 0 && isset($data['objGestion']['lstCronogramaBE']) ) :
+                //consultamos si ya tiene cronograma
+                if ( $data['objGestion']['FLG_ELIMINAR_CRONOGRAMA']  ) :
+                    //eliminamos si tiene un cronograma anteriior
+                    $del_cronograma['CUE_CODIGO'] = $array_param['CUE_CODIGO'];
+                    $del_cronograma['CRO_USUARIO_MODIFICA'] = $array_param['USU_CODIGO'];
+                    $del_cronograma['TXT_MOTIVO_CONVENIO'] = $array_obj['ObjCuenta']['TXT_MOTIVO_CONVENIO'];
+                    $result = $cliente->setEliminarCronograma($del_cronograma);
+                    $resultado['elimina_cronograma'] = $result;
+                endif;
+                //agregamos la cuota 0 al array de cuotas
+                $array_cuota_cero = [ "NRO_CUOTA" => 0,
+                                      "FEC_VENCIMIENTO" => $array_param['GES_FECHA_INICIAL'],
+                                      "IMP_CUOTA" => $array_param['GES_IMPORTE_INICIAL'] ];
+                $array_cronograma = $data['objGestion']['lstCronogramaBE'];
+                array_unshift($array_cronograma, $array_cuota_cero);
+                //insertamos cuota por cuota en la tabla de CRONOGRAMA
+                foreach ($array_cronograma as $cuota) :
+                    $cuota['CUE_CODIGO'] = $array_param['CUE_CODIGO'];
+                    $cuota['GES_CODIGO'] = $ges_codigo;
+                    $cuota['USU_CODIGO'] = $array_param['USU_CODIGO'];
+                    $result = $cliente->setRegistraCronograma($cuota);
+                    $resultado['cronograma'][] = $result;
+                endforeach;
+                //seteamos que tiene convenio en la tabla GCC_CUENTAS
+                $array_param = array();
+                $array_param['GES_FECHA_INICIAL'] = $array_obj['GES_FECHA_INICIAL'];
+                $array_param['GES_IMPORTE_INICIAL'] = $array_obj['GES_IMPORTE_INICIAL'];
+                $array_param['CUE_CONVENIO_CUOTAS'] = $array_obj['GES_NRO_CUOTAS'];
+                $array_param['CUE_CODIGO'] = $array_obj['ObjCuenta']['CUE_CODIGO'];
+                $result = $cliente->setCuentaTieneConvenio($array_param);
+                $resultado['CUENTA_TIENE_CONVENIO'] = $result;
+            endif;
+        break;
 
         default:
             $resultado = ["error" => "consulta no encontrada"];

@@ -258,7 +258,8 @@ class Cliente extends DB
           LEFT JOIN COBRANZA.GCC_TIPO_RESULTADO_TAB TAB ON TAB.TAB_CODIGO=TRES.TIR_CODIGO
           WHERE
           TRES.TIR_PADRE = :codigo
-          AND TRES.TIR_ESTADO_REGISTRO='A'";
+          AND TRES.TIR_ESTADO_REGISTRO='A'
+          AND TRES.TIR_PADRE <> ''";
 
       $resultado = $this->run_query_wParam($query, $array_param);
       $tipo_resultado = array();
@@ -377,6 +378,48 @@ class Cliente extends DB
 //     "CONSULTA_AJAX":"registrarGestion"}
   }//endfunction
 
+  public function setRegistrarGestionProgresivo($array_param)
+  {
+      $query = "EXEC COBRANZA.SP_REGISTRAR_GESTION_PROGRESIVO
+                  :TIR_CODIGO,
+                  :SOL_CODIGO,
+                  0,
+                  :TEL_CODIGO,
+                  :GES_OBSERVACIONES,
+                  :CUE_CODIGO,
+                  :CAR_CODIGO,
+                  :SCA_CODIGO,
+                  :DIR_CODIGO,
+                  0,
+                  :USU_CODIGO,
+                  :TIG_CODIGO,
+                  :GES_FECHA_INICIAL,
+                  :GES_IMPORTE_INICIAL,
+                  0,
+                  :GES_NRO_CUOTAS,
+                  :GES_IMPORTE_NEGOCIACION,
+                  :GES_SALDO_NEGOCIACION,
+                  :GES_VALOR_CUOTA,
+                  :REC_NUMERO,
+                  :REC_AGENCIA,
+                  :REC_MONTO,
+                  :REC_FECHA";
+      $datos_reg_gestion = $this->run_query_wParam($query, $array_param);
+      //iteramos sobre todos los resultados del procedimiento hasta llegar al
+      //ultimo, no sabemos eq que rowset estara el resultado, porque el numero de
+      //rowset varia segun los parametros del procedimiento
+      while ( $datos_reg_gestion->nextRowset() ) :
+          try {
+              $cod_gestion = $datos_reg_gestion->fetch(PDO::FETCH_NUM);
+              $result['msg'][] = $cod_gestion;
+          } catch (\Exception $e) {
+              $result['msg'][] = "sin resultados";
+          }
+      endwhile;
+      $result['d'] = $cod_gestion[0];
+      return $result;
+  }//endfunction
+  
   public function setRegistrarTareaRecordatorio($array_param)
   {
       $query = "EXEC COBRANZA.SP_REGISTRAR_RECORDATORIO

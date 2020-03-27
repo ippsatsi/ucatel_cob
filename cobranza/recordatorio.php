@@ -74,7 +74,7 @@ $(document).ready(function () {
                     htmlText = "<tr " + (i % 2 == 0 ? "class='row_listabandejavirtual'" : "") + ">" +
                     "<td><span>" + (i + 1) + "</span></td>" +
                     "<td><a href='gestionar-cuenta.php?cuenta=" + obj.CUE_NROCUENTA + "'>" + obj.CUE_NROCUENTA + "</a></td>" +
-                    "<td><span>" + obj.CLI_NOMBRE_COMPLETO + "</span></td>" +
+                    "<td><span>" + obj.CLIENTE + "</span></td>" +
                     "<td><span>" + obj.CLI_DOCUMENTO_IDENTIDAD + "</span></td>" +
                     "<td><span>" + obj.REC_FECHA + "</span></td>" +
                     "<td><span>" + obj.REC_HORA + "</span></td>" +

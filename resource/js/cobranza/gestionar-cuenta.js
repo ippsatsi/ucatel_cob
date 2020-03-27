@@ -699,8 +699,8 @@ function obtenerCronograma() {
                             + "<td>" + obj.DIC_SIMBOLO + " " + obj.IMP_CUOTA + "</td>"
                             + "<td>" + ((rol != 1 && rol != 2 && rol != 3) || Number(obj.FLG_PAGO) ? obj.FLG_ESTADO_PAGO : "<input type='checkbox' class='form-cronograma' id='rdCompromiso_" + obj.CRO_CODIGO + "' onclick='habilitarDatosPago(" + obj.CRO_CODIGO + ");'/>" +
                                 " <span id='lblComprEstado_" + obj.CRO_CODIGO + "'>PENDIENTE</span>") + "</td>"
-                            + "<td>" + ((rol != 1 && rol != 2 && rol != 3) || Number(obj.FLG_PAGO) ? obj.PAG_MONTO : "<input type='text' id='txtComprMonto_" + obj.CRO_CODIGO + "' class='form-control' disabled='true'/>") + "</td>"
-                            + "<td>" + ((rol != 1 && rol != 2 && rol != 3) || Number(obj.FLG_PAGO) ? obj.PAG_FECHA : "<input type='text' id='txtComprFecha_" + obj.CRO_CODIGO + "' class='form-control' disabled='true'/>") + "</td>"
+                            + "<td>" + ((rol != 1 && rol != 2 && rol != 3) || Number(obj.FLG_PAGO) ? (obj.PAG_MONTO == '.00' ? '' : obj.PAG_MONTO) : "<input type='text' id='txtComprMonto_" + obj.CRO_CODIGO + "' class='form-control' disabled='true'/>") + "</td>"
+                            + "<td>" + ((rol != 1 && rol != 2 && rol != 3) || Number(obj.FLG_PAGO) ? (obj.PAG_FECHA == null ? '' : obj.PAG_FECHA) : "<input type='text' id='txtComprFecha_" + obj.CRO_CODIGO + "' class='form-control' disabled='true'/>") + "</td>"
                         + "</tr>";
                     $("#tblCronograma tbody").append(htmlText);
                     $("#txtComprFecha_" + obj.CRO_CODIGO).datepicker({
