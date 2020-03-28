@@ -291,8 +291,7 @@ class Bandejas extends DB
 
     public function getResumenCarteras()
     {
-        $query = "EXEC COBRANZA.SP_RESUMEN_CUENTAS_ACTIVAS";//"'', '', '', 0, '14/02/2020', '14/02/2020', 1";
-
+        $query = "EXEC COBRANZA.SP_RESUMEN_CUENTAS_ACTIVAS";
         $resumenCarteras = $this->run_query($query);
         $result = array("d"=>[]);
         $array_result = array();
@@ -301,6 +300,62 @@ class Bandejas extends DB
         endwhile;
 
         $result['d'] = $array_result;
+        return $result;
+    }//endfunction
+    //reiniciar contactabilidad
+    public function getPeriodosActivos()
+    {
+        $query = "EXEC COBRANZA.SP_LISTAR_PERIODOS_ACTIVOS";
+
+        $periodosActivos = $this->run_query($query);
+        $result = array("d"=>[]);
+        $array_result = array();
+        while ( $fila = $periodosActivos->fetch(PDO::FETCH_ASSOC) ) :
+            array_push($array_result, $fila);
+        endwhile;
+
+        $result['d'] = $array_result;
+        return $result;
+    }//endfunction
+    //reiniciar contactabilidad
+    public function getPeriodosActuales()
+    {
+        $query = "EXEC COBRANZA.SP_LISTAR_PERIODOS_ACTUALES";
+        $periodosActuales = $this->run_query($query);
+        $result = array("d"=>[]);
+        $array_result = array();
+        while ( $fila = $periodosActuales->fetch(PDO::FETCH_ASSOC) ) :
+            array_push($array_result, $fila);
+        endwhile;
+
+        $result['d'] = $array_result;
+        return $result;
+    }//endfunction
+        //reiniciar contactabilidad
+        public function setPeriodo($parametros)
+        {
+            $query = "EXEC COBRANZA.SP_REGISTRAR_PERIODO_SUBCARTERA :sca_codigo";
+            $registrarPeriodo = $this->run_query_wParam($query, $parametros);
+
+            $num_filas = $registrarPeriodo->rowCount();
+            $result['d'] = array();
+            if ( $num_filas > 0 ) :
+                $result['d'] = "CORRECTO";
+                return $result;
+            endif;
+            return $result;
+        }//endfunction
+            //reiniciar contactabilidad
+    public function resetPeriodo($parametros)
+    {
+        $query = "EXEC COBRANZA.SP_RESETEAR_CUENTA_STATUS_MENSUAL :sca_codigo";
+        $resetPeriodo = $this->run_query_wParam($query, $parametros);
+        $num_filas = $resetPeriodo->rowCount();
+        $result['d'] = array();
+        if ( $num_filas > 0 ) :
+            $result['d'] = "CORRECTO";
+            return $result;
+        endif;
         return $result;
     }//endfunction
 }//endclass

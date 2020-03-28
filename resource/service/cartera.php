@@ -225,8 +225,63 @@ if ( isset($_GET['CONSULTA_AJAX']) ) :
 
         echo json_encode($resultado);
     endif;
-endif;
 
+        //listar periodos activos CARGA CARTERAS/reiniciar contactabilidad
+        if ( $_GET['CONSULTA_AJAX'] == 'listarPeriodosActivos') :
+
+            $periodosActivos = new Bandejas();
+    
+            $resultado = $periodosActivos->getPeriodosActivos();
+            header('Content-Type: application/json; charset=UTF-8');
+    
+            echo json_encode($resultado);
+        endif;
+
+            //listar periodos actuales CARGA CARTERAS/reiniciar contactabilidad
+    if ( $_GET['CONSULTA_AJAX'] == 'listarPeriodosFaltantes') :
+
+        $periodosActuales = new Bandejas();
+
+        $resultado = $periodosActuales->getPeriodosActuales();
+        header('Content-Type: application/json; charset=UTF-8');
+
+        echo json_encode($resultado);
+    endif;
+
+    //registrar periodos CARGA CARTERAS/reiniciar contactabilidad
+    if ( $_GET['CONSULTA_AJAX'] == 'registrarPeriodo') :
+
+        $data = json_decode(file_get_contents('php://input'), true);
+
+        if ( is_array($data) ) :
+            $registrarPeriodo = new Bandejas();
+            $parametros = array(
+                "sca_codigo" => $data['codigo']
+            );
+            $resultado = $registrarPeriodo->setPeriodo($parametros);
+            header('Content-Type: application/json; charset=UTF-8');
+    
+            echo json_encode($resultado);
+        endif;
+    endif;
+
+    //resetear periodos actuales CARGA CARTERAS/reiniciar contactabilidad
+    if ( $_GET['CONSULTA_AJAX'] == 'reiniciarPeriodo') :
+
+        $data = json_decode(file_get_contents('php://input'), true);
+
+        if ( is_array($data) ) :
+            $reiniciarPeriodo = new Bandejas();
+            $parametros = array(
+                "sca_codigo" => $data['codigo']
+            );
+            $resultado = $reiniciarPeriodo->resetPeriodo($parametros);
+            header('Content-Type: application/json; charset=UTF-8');
+
+            echo json_encode($resultado);
+        endif;
+    endif;
+endif;
 exit;
 
  ?>

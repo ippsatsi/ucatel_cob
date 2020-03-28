@@ -173,7 +173,7 @@ function buscar() {
         "order": [[0, "asc"]],
         "info": true,
         "scrollCollapse": false,
-        "pageLength": 10,
+        "pageLength": 25,
         "bProcessing": true,
         "bServerSide": true,
         "columnDefs": [{ orderable: false }], //, targets: [1,2] }],
