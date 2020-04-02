@@ -140,7 +140,17 @@ class Usuario extends DB
         $html .= "  </ul>\n";
         echo $html;
 
-    }
+    }//endfunction
+
+    public function liberar_usuario($array_param) {
+
+        $query = "EXEC COBRANZA.SP_LIBERAR_USUARIO_TIPO :tipo, :codigo, :usu_libera";
+        $array_param['usu_libera'] = $this->user_id;
+        $liberar_usuario = $this->run_query_update_wParam($query, $array_param);
+        $result['d'] = $liberar_usuario->rowCount();
+
+        return $result;
+    }//endfunction
 }//endclass
 
 

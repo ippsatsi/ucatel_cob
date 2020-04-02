@@ -358,6 +358,20 @@ class Bandejas extends DB
         endif;
         return $result;
     }//endfunction
+    //Asignacion - Listar cuentas por Rol
+    public function ListarAsignacionPorRol($parametros)
+    {
+        $query = "EXEC COBRANZA.SP_LISTAR_CUENTAS_ROL :rol_codigo";
+        $resetPeriodo = $this->run_query_wParam($query, $parametros);
+        $result = array("d"=>[]);
+        $array_result = array();
+        while ( $fila = $resetPeriodo->fetch(PDO::FETCH_ASSOC) ) :
+            array_push($array_result, $fila);
+        endwhile;
+
+        $result['d'] = $array_result;
+        return $result;
+    }//endfunction
 }//endclass
 
 

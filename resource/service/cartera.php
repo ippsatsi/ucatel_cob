@@ -281,6 +281,28 @@ if ( isset($_GET['CONSULTA_AJAX']) ) :
             echo json_encode($resultado);
         endif;
     endif;
+
+    //listar asignacion CALL Asignacion/Asignacion Cartera
+    if ( $_GET['CONSULTA_AJAX'] == 'listarCuentasCall') :
+        $asignacionCall = new Bandejas();
+        $parametros = array(
+            "rol_codigo" => 4
+        );
+        $resultado = $asignacionCall->ListarAsignacionPorRol($parametros);
+        header('Content-Type: application/json; charset=UTF-8');
+        echo json_encode($resultado);
+    endif;
+
+          //listar asignacion CAMPO Asignacion/Asignacion Cartera
+    if ( $_GET['CONSULTA_AJAX'] == 'listarCuentasCampo') :
+        $asignacionCampo = new Bandejas();
+        $parametros = array(
+            "rol_codigo" => 5
+        );
+        $resultado = $asignacionCampo->ListarAsignacionPorRol($parametros);
+        header('Content-Type: application/json; charset=UTF-8');
+        echo json_encode($resultado);
+    endif;
 endif;
 exit;
 
