@@ -386,6 +386,20 @@ class Bandejas extends DB
         $result['d'] = $array_result;
         return $result;
     }//endfunction
+    //Usuarios - Listar usuarios activos
+    public function ListarUsuariosCriterio($parametros)
+    {
+        $query = "EXEC COBRANZA.SP_LISTAR_USUARIOS_CRITERIO :criterio, :texto";
+        $listaUsuariosCriterio = $this->run_query_wParam($query, $parametros);
+        $result = array("d"=>[]);
+        $array_result = array();
+        while ( $fila = $listaUsuariosCriterio->fetch(PDO::FETCH_ASSOC) ) :
+            array_push($array_result, $fila);
+        endwhile;
+
+        $result['d'] = $array_result;
+        return $result;
+    }//endfunction
     //bandeja_compromisos
     public function getBandejaCompromisos($parametros)
     {

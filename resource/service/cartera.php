@@ -336,6 +336,17 @@ if ( isset($_GET['CONSULTA_AJAX']) ) :
             echo json_encode($resultado);
         endif;
     endif;
+    //listar usuarios por criterio/Usuario activos/Bajas
+    if ( $_GET['CONSULTA_AJAX'] == 'listarUsuariosCriterio') :
+        $data = json_decode(file_get_contents('php://input'), true);
+        if (  is_array($data)) :
+            $usuariosCriterio = new Bandejas();
+            $parametros = $data;
+            $resultado = $usuariosCriterio->ListarUsuariosCriterio($parametros);
+            header('Content-Type: application/json; charset=UTF-8');
+            echo json_encode($resultado);
+        endif;
+    endif;
 endif;
 exit;
 
