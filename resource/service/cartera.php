@@ -303,6 +303,26 @@ if ( isset($_GET['CONSULTA_AJAX']) ) :
         header('Content-Type: application/json; charset=UTF-8');
         echo json_encode($resultado);
     endif;
+    //listar usuarios activos Gestiones/Bandeja Compromisos
+    if ( $_GET['CONSULTA_AJAX'] == 'listarUsuariosGestion') :
+        $usuariosActivos = new Bandejas();
+        $resultado = $usuariosActivos->ListarUsuariosActivos();
+        header('Content-Type: application/json; charset=UTF-8');
+        echo json_encode($resultado);
+    endif;
+    //BANDEJA Compromiso Semanal
+    if ( $_GET['CONSULTA_AJAX'] == 'reporteCompromiso') :
+        $data = json_decode(file_get_contents('php://input'), true);
+
+        if (  is_array($data)) :
+            $band_compromisos = new Bandejas();
+
+            $parametros = $data;
+            $resultado = $band_compromisos->getBandejaCompromisos($parametros);
+            header('Content-Type: application/json; charset=UTF-8');
+            echo json_encode($resultado);
+        endif;
+    endif;
 endif;
 exit;
 
