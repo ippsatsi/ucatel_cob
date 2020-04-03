@@ -409,6 +409,26 @@ class Bandejas extends DB
         $result['d'] = $array_result;
         return $result;
     }//endfunction
+
+    //carga carteras//migracion de cuentas
+    public function getBandejaMigracionCuentas($parametros)
+    {
+        $query = "EXEC COBRANZA.SP_LISTAR_MIGRACIONES 
+                    :nro_cuenta, 
+                    :nro_documento,
+                    :nombre_completo,
+                    :fec_desde";
+
+        $bandeja_migracion_cuentas = $this->run_query_wParam($query, $parametros);
+        $result = array("d"=>[]);
+        $array_result = array();
+        while ( $fila = $bandeja_migracion_cuentas->fetch(PDO::FETCH_ASSOC) ) :
+            array_push($array_result, $fila);
+        endwhile;
+
+        $result['d'] = $array_result;
+        return $result;
+    }//endfunction
 }//endclass
 
 

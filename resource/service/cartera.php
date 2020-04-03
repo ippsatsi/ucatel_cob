@@ -323,6 +323,19 @@ if ( isset($_GET['CONSULTA_AJAX']) ) :
             echo json_encode($resultado);
         endif;
     endif;
+    //carga carteras//migracion de cuentas
+    if ( $_GET['CONSULTA_AJAX'] == 'listarMigraciones') :
+        $data = json_decode(file_get_contents('php://input'), true);
+
+        if (  is_array($data)) :
+            $band_compromisos = new Bandejas();
+
+            $parametros = $data['objFiltro'];
+            $resultado = $band_compromisos->getBandejaMigracionCuentas($parametros);
+            header('Content-Type: application/json; charset=UTF-8');
+            echo json_encode($resultado);
+        endif;
+    endif;
 endif;
 exit;
 
