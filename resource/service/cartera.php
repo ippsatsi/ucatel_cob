@@ -347,6 +347,19 @@ if ( isset($_GET['CONSULTA_AJAX']) ) :
             echo json_encode($resultado);
         endif;
     endif;
+    //BANDEJA Reporte de Gestiones
+    if ( $_GET['CONSULTA_AJAX'] == 'reporteAsignacionGestiones') :
+        $data = json_decode(file_get_contents('php://input'), true);
+
+        if (  is_array($data)) :
+            $band_gestiones = new Bandejas();
+            $parametros = $data;
+            
+            $resultado = $band_gestiones->getBandejaGestiones($parametros);
+            header('Content-Type: application/json; charset=UTF-8');
+            echo json_encode($resultado);
+        endif;
+    endif;
 endif;
 exit;
 

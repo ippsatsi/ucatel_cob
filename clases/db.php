@@ -67,10 +67,22 @@ class DB
     public function run_big_query_wParam($query, $parameters)
     {
         //aumentamos el buffer de php para cursores client-side
-        $new_size = 61440;
+        $new_size = 161440;
         ini_set('pdo_sqlsrv.client_buffer_max_kb_size', $new_size);
         $this->connect()->setAttribute( PDO::SQLSRV_ATTR_CLIENT_BUFFER_MAX_KB_SIZE, $new_size );
         $run_query = $this->connect()->prepare($query, $this->array_parameter_select_count);
+        $run_query->execute($parameters);
+
+        return $run_query;
+    }
+
+    public function run_too_big_query_wParam($query, $parameters)
+    {
+        //aumentamos el buffer de php para cursores client-side
+        $new_size = 61440;
+        ini_set('pdo_sqlsrv.client_buffer_max_kb_size', $new_size);
+        $this->connect()->setAttribute( PDO::SQLSRV_ATTR_CLIENT_BUFFER_MAX_KB_SIZE, $new_size );
+        $run_query = $this->connect()->prepare($query, $this->array_parameter_select_big_count);
         $run_query->execute($parameters);
 
         return $run_query;

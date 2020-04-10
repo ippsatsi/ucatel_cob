@@ -443,6 +443,29 @@ class Bandejas extends DB
         $result['d'] = $array_result;
         return $result;
     }//endfunction
+
+    public function getBandejaGestiones($parametros)
+    {
+        $query = "EXEC COBRANZA.SP_REPORTE_ASIGNACION_GESTIONES 
+                    :prv_codigo,
+                    :car_codigo,
+                    :sca_codigo,
+                    :fecha_desde,
+                    :fecha_hasta,
+                    :tipo,
+                    :progresivo,
+                    :estado";
+
+        $band_reporte_gestiones = $this->run_too_big_query_wParam($query, $parametros);
+        $result = array("d"=>[]);
+        $array_result = array();
+        while ( $fila = $band_reporte_gestiones->fetch(PDO::FETCH_ASSOC) ) :
+            array_push($array_result, $fila);
+        endwhile;
+
+        $result['d'] = $array_result;
+        return $result;
+    }//endfunction
 }//endclass
 
 
